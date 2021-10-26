@@ -95,7 +95,9 @@
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Thể Loại</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./bill-list.html" aria-expanded="false">Danh sách thể loại</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/genre/list" aria-expanded="false">Danh sách thể loại</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/genre/insert">Thêm mới</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/genre/update">Cập nhật</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">CA SĨ & USER</li>

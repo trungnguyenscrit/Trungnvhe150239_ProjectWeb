@@ -16,6 +16,38 @@
         <servlet-name>UpdateSongController</servlet-name>
         <servlet-class>admincontroller.UpdateSongController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListGenreController</servlet-name>
+        <servlet-class>admincontroller.ListGenreController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertGenreController</servlet-name>
+        <servlet-class>admincontroller.InsertGenreController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteGenreController</servlet-name>
+        <servlet-class>admincontroller.DeleteGenreController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateGenreController</servlet-name>
+        <servlet-class>admincontroller.UpdateGenreController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListSingerController</servlet-name>
+        <servlet-class>admincontroller.ListSingerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertSingerController</servlet-name>
+        <servlet-class>admincontroller.InsertSingerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateSingerController</servlet-name>
+        <servlet-class>admincontroller.UpdateSingerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteSingerController</servlet-name>
+        <servlet-class>admincontroller.DeleteSingerController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListSongController</servlet-name>
         <url-pattern>/music/song/list</url-pattern>
@@ -31,6 +63,38 @@
     <servlet-mapping>
         <servlet-name>UpdateSongController</servlet-name>
         <url-pattern>/music/song/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListGenreController</servlet-name>
+        <url-pattern>/music/genre/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertGenreController</servlet-name>
+        <url-pattern>/music/genre/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteGenreController</servlet-name>
+        <url-pattern>/music/genre/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateGenreController</servlet-name>
+        <url-pattern>/music/genre/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListSingerController</servlet-name>
+        <url-pattern>/music/singer/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertSingerController</servlet-name>
+        <url-pattern>/music/singer/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateSingerController</servlet-name>
+        <url-pattern>/music/singer/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteSingerController</servlet-name>
+        <url-pattern>/music/singer/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

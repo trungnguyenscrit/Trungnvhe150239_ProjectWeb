@@ -183,63 +183,37 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-validation">
-                                        <form class="form-valide" action="insert" method="POST" runat="server">
+                                        <form class="form-valide" action="update" method="POST" >
                                             <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-username">ID_Song <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-username">ID_singer <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-username" name="id_song" >
+                                                    ${requestScope.singers.id_singer}<input type="hidden" class="form-control" id="val-username" name="id_singer" value="${requestScope.singers.id_singer}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-username" name="name" >
+                                                    <input type="text" class="form-control" id="val-username" name="name" value="${requestScope.singers.name}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Poster <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="file" class="form-control" id="val-username imgInp" name="poster" onchange="readURL(this);" >
+                                                    <input type="file" class="form-control" id="val-username imgInp" name="poster" onchange="readURL(this);"  value="${requestScope.singers.poster}">
                                                     <img id="blah" src="#" alt="your image" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-username">LinkSong <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-6">
-                                                    <input type="file" class="form-control" id="val-username" name="linksong" >
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Description <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-username" name="description" >
-                                                </div>
+                                                    <input type="text" class="form-control" id="val-username" name="description" value="${requestScope.singers.description}">
+                                                </div> 
                                             </div>
-
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-skill">Singer <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-6">
-                                                    <c:forEach items="${requestScope.singers}" var="si">
-                                                        <input type="checkbox" name="id_singer" value="${si.id_singer}" /> ${si.name}
-                                                    </c:forEach>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-skill">Genre <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-6">
-                                                    <c:forEach items="${requestScope.genres}" var="g">
-                                                        <input type="checkbox" name="id_genre" value="${g.id_genre}" /> ${g.name_genre}
-                                                    </c:forEach>
-                                                </div>
-                                            </div>
-
+                                            
                                             <div class="form-group row">
                                                 <div class="col-lg-8 ml-auto">
                                                     <button type="submit" class="btn btn-primary">SAVE</button>
