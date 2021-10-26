@@ -4,7 +4,9 @@ JSP
 *S JSP
 *F
 + 0 index.jsp
-index.jsp
+admin/index.jsp
 *L
-1,2624:44
+1,90:44
+91,3:134,3
+94,101:143
 *E

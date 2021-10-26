@@ -73,26 +73,23 @@
                 </div>
             </div>
         </div>
-        <div class="nk-sidebar">
+                <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">Tổng quan</li>
-                    <li>
-                        <a href="./index.html" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer"></i><span class="nav-text">Tổng quan</span>
-                        </a>
-                    </li>
-                    <li class="nav-label">BÀI HÁT</li>
+                    
+                    <li class="nav-label">Bài Hát </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-note menu-icon"></i><span class="nav-text">Bài Hát</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./product-list.html">Danh sách bài hát</a></li>
-                            <li><a href="./new-product.html">Thêm mới</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/song/list">Danh sách bài hát</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/song/insert">Thêm mới</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/song/update">Cập nhật</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Thể Loại</li>
+                    <li class="nav-label">THỂ LOẠI</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Thể Loại</span>
@@ -101,14 +98,14 @@
                             <li><a href="./bill-list.html" aria-expanded="false">Danh sách thể loại</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Ca Sĩ & User</li>
+                    <li class="nav-label">CA SĨ & USER</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Ca Sĩ</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./customer-list.html">Danh sách Ca Sĩ</a></li>
-                            <!-- <li><a href="./page-register.html">Thêm Ca Sĩ mới</a></li> -->
+                            <li><a href="./customer-list.html">Danh sách ca sĩ</a></li>
+                             <li><a href="./page-register.html">Thêm ca sĩ mới</a></li> 
                         </ul>
                     </li>
                     <li>
@@ -117,7 +114,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="./staff-list.html">Danh sách User</a></li>
-                            <!-- <li><a href="./page-register.html">Thêm danh sách User mới</a></li> -->
+                             <li><a href="./page-register.html">Thêm danh sách User mới</a></li> 
                         </ul>
                     </li>
 

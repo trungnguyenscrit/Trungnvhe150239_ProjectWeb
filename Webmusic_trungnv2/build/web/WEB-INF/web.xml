@@ -4,9 +4,33 @@
         <servlet-name>ListSongController</servlet-name>
         <servlet-class>admincontroller.ListSongController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InsertSongController</servlet-name>
+        <servlet-class>admincontroller.InsertSongController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteSongController</servlet-name>
+        <servlet-class>admincontroller.DeleteSongController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateSongController</servlet-name>
+        <servlet-class>admincontroller.UpdateSongController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListSongController</servlet-name>
         <url-pattern>/music/song/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertSongController</servlet-name>
+        <url-pattern>/music/song/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteSongController</servlet-name>
+        <url-pattern>/music/song/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateSongController</servlet-name>
+        <url-pattern>/music/song/update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

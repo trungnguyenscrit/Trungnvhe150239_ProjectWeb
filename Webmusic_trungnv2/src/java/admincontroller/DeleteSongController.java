@@ -8,18 +8,16 @@ package admincontroller;
 import dal.SongDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Song;
 
 /**
  *
  * @author Trung
  */
-public class ListSongController extends HttpServlet {
+public class DeleteSongController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,10 +31,13 @@ public class ListSongController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        SongDBContext db = new SongDBContext();
-        ArrayList<Song> songs = db.getSongs();
-        request.setAttribute("songs", songs);
-        request.getRequestDispatcher("../../admin/listsong.jsp").forward(request, response);
+        try {
+            String id = request.getParameter("id_song");
+            SongDBContext db = new SongDBContext();
+            db.delete(id);
+            response.sendRedirect("list");
+        } catch (Exception e) {
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

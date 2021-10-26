@@ -61,7 +61,7 @@
                     <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
                     <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="images/mi.png" alt="">
+                        <img src="${pageContext.request.contextPath}/admin/images/mi.png" alt="">
                     </span>
                 </a>
             </div>
@@ -114,19 +114,15 @@
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">Tổng quan</li>
-                    <li>
-                        <a href="./index.html" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer"></i><span class="nav-text">Tổng quan</span>
-                        </a>
-                    </li>
                     <li class="nav-label">Bài Hát </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-note menu-icon"></i><span class="nav-text">Bài Hát</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./product-list.html">Danh sách bài hát</a></li>
-                            <li><a href="./new-product.html">Thêm mới</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/song/list">Danh sách bài hát</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/song/insert">Thêm mới</a></li>
+                            <li><a href="${pageContext.request.contextPath}/music/song/update">Cập nhật</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">THỂ LOẠI</li>
@@ -201,7 +197,7 @@
                                             </tr>
                                         </thead>
                                         
-                                        <tfoot>
+                                        <tbody>
                                             <c:forEach items="${requestScope.songs}" var="s">
                                             <tr>
                                                 <th>${s.id_song}</th>
@@ -223,7 +219,7 @@
                                                 </td>
                                             </tr>
                                             </c:forEach>
-                                        </tfoot>
+                                        </tbody>
 <!--                                            add sp 
                                          foot -->
                                     </table>
