@@ -48,6 +48,22 @@
         <servlet-name>DeleteSingerController</servlet-name>
         <servlet-class>admincontroller.DeleteSingerController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListSongWithAlbumController</servlet-name>
+        <servlet-class>admincontroller.ListSongWithAlbumController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteSongWithAlbumController</servlet-name>
+        <servlet-class>admincontroller.DeleteSongWithAlbumController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertSongWithAlbumController</servlet-name>
+        <servlet-class>admincontroller.InsertSongWithAlbumController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateSongWithAlbumController</servlet-name>
+        <servlet-class>admincontroller.UpdateSongWithAlbumController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListSongController</servlet-name>
         <url-pattern>/music/song/list</url-pattern>
@@ -95,6 +111,22 @@
     <servlet-mapping>
         <servlet-name>DeleteSingerController</servlet-name>
         <url-pattern>/music/singer/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListSongWithAlbumController</servlet-name>
+        <url-pattern>/music/songwithalbum/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteSongWithAlbumController</servlet-name>
+        <url-pattern>/music/songwithalbum/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertSongWithAlbumController</servlet-name>
+        <url-pattern>/music/songwithalbum/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateSongWithAlbumController</servlet-name>
+        <url-pattern>/music/songwithalbum/update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

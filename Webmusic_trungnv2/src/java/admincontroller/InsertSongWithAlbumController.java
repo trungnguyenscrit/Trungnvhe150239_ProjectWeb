@@ -5,8 +5,7 @@
  */
 package admincontroller;
 
-import dal.GenreDBContext;
-import dal.SingerDBContext;
+import dal.AlbumDBContext;
 import dal.SongDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,15 +14,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Genre;
-import model.Singer;
+import model.Album;
 import model.Song;
 
 /**
  *
  * @author Trung
  */
-public class UpdateSongController extends HttpServlet {
+public class InsertSongWithAlbumController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,6 +32,8 @@ public class UpdateSongController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -47,33 +47,11 @@ public class UpdateSongController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-
-        String id = request.getParameter("id_song");
-        SongDBContext db = new SongDBContext();
-        Song songs = db.getSong(id);
+        
+        SongDBContext sdb = new SongDBContext();
+        ArrayList<Song> songs = sdb.getSongs();
         request.setAttribute("songs", songs);
-
-        SingerDBContext sdb = new SingerDBContext();
-        ArrayList<Singer> allsingers = sdb.getSingers();
-        request.setAttribute("allsingers", allsingers);
-
-        GenreDBContext gdb = new GenreDBContext();
-        ArrayList<Genre> allgenres = gdb.getGenres();
-        request.setAttribute("allgenres", allgenres);
-        //        response.getWriter().println(songs.getId_song());
-//        response.getWriter().println(songs.getName());
-//        response.getWriter().println(songs.getPoster());
-//        response.getWriter().println(songs.getLinksong());
-//        response.getWriter().println(songs.getDescription());
-//        
-//        for (Singer a : songs.getSingers()) {
-//            response.getWriter().println(a);
-//        }
-//        for (Genre b : songs.getGenres()) {
-//            response.getWriter().println(b);
-//        }
-
-        request.getRequestDispatcher("../../admin/updatesong.jsp").forward(request, response);
+        request.getRequestDispatcher("../../admin/newsongwithalbum.jsp").forward(request, response);
     }
 
     /**
@@ -88,34 +66,22 @@ public class UpdateSongController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-
-        Song s = new Song();
-        s.setId_song(request.getParameter("id_song"));
-        s.setName(request.getParameter("name"));
-        s.setPoster(request.getParameter("poster"));
-        s.setLinksong(request.getParameter("linksong"));
-        s.setDescription(request.getParameter("description"));
-
-        String[] gens = request.getParameterValues("id_genre");
-        if (gens != null) {
-            for (String gen : gens) {
-                Genre g = new Genre();
-                g.setId_genre(gen);
-                s.getGenres().add(g);
+        Album a = new Album();
+        a.setId_album(request.getParameter("id_album"));
+        a.setName(request.getParameter("name"));
+        a.setDescription(request.getParameter("description"));
+        
+        String[] sos = request.getParameterValues("id_song");
+        if (sos!=null) {
+            for (String so : sos) {
+                Song s = new Song();
+                s.setId_song(so);
+                a.getSongs().add(s);
             }
         }
-
-        String[] sings = request.getParameterValues("id_singer");
-        if (sings != null) {
-            for (String sing : sings) {
-                Singer si = new Singer();
-                si.setId_singer(sing);
-                s.getSingers().add(si);
-            }
-        }
-
-        SongDBContext sdb = new SongDBContext();
-        sdb.update(s);
+        
+        AlbumDBContext db = new AlbumDBContext();
+        db.insertsongwithalbum(a);
         response.sendRedirect("list");
     }
 

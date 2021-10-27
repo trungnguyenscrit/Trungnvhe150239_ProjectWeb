@@ -110,13 +110,15 @@
                              <li><a href="${pageContext.request.contextPath}/music/singer/update">Cập nhật</a></li>
                         </ul>
                     </li>
+                    <li class="nav-label">ALBUM</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">User</span>
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Album</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./staff-list.html">Danh sách User</a></li>
-                             <li><a href="./page-register.html">Thêm danh sách User mới</a></li> 
+                            <li><a href="${pageContext.request.contextPath}/music/songwithalbum/list">Danh sách Album</a></li>
+                             <li><a href="${pageContext.request.contextPath}/music/songwithalbum/insert">Thêm mới</a></li> 
+                             <li><a href="${pageContext.request.contextPath}/music/songwithalbum/update">Cập nhật</a></li>
                         </ul>
                     </li>
 

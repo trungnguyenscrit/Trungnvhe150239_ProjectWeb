@@ -169,19 +169,36 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-validation">
-                                        <form class="form-valide" action="update" method="POST" runat="server">
+                                        <form class="form-valide" action="insert" method="POST" runat="server">
                                             <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-username">ID_Genre <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-username">ID_Album <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    ${requestScope.genres.id_genre}<input type="hidden" class="form-control" id="val-username" name="id_genre" value="${requestScope.genres.id_genre}" >
+                                                    <input type="text" class="form-control" id="val-username" name="id_album" >
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-username" name="name_genre" value="${requestScope.genres.name_genre}">
+                                                    <input type="text" class="form-control" id="val-username" name="name" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="val-username">Description <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="val-username" name="description" >
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="val-skill">Song <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-6">
+                                                    <c:forEach items="${requestScope.songs}" var="s">
+                                                        <input type="checkbox" name="id_song" value="${s.id_song}" /> ${s.name}
+                                                    </c:forEach>
                                                 </div>
                                             </div>
 
@@ -209,7 +226,7 @@
             ***********************************-->
             <div class="footer">
                 <div class="copyright">
-                    <p>Copyright &copy; Designed & Developed by Trung Nguyễn . Thanks to <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+                    <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
                 </div>
             </div>
             <!--**********************************
