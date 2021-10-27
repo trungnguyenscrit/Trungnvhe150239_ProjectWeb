@@ -16,16 +16,12 @@
          <!--Custom Stylesheet--> 
         <link href="${pageContext.request.contextPath}/admin/css/style.css" rel="stylesheet">
         <script> 
-            function doUpdate(id_song)
-            {
-                window.location.href = "update?id_song=" + id_song;
-            }
-            function doDelete(id_song)
+            function doDelete(user_id)
             {
                 var c = confirm("are you sure?");
                 if(c)
                 {
-                    window.location.href = "delete?id_song=" + id_song;
+                    window.location.href = "delete?user_id=" + user_id;
                 }
             }
         
@@ -195,43 +191,29 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Quản lý bài hát</h4>
+                                <h4 class="card-title">Quản lý User</h4>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered zero-configuration">
                                         <thead>
                                             <tr>
-                                                <th>ID_Song</th>
-                                                <th>NAME</th>
-                                                <th>Poster</th>
-                                                <th>LinkSong</th>
-                                                <th>Description</th>
-                                                <th>Singer</th>
-                                                <th>Genre</th>
-                                                <td></td>
-                                                <td></td>
+                                                <th>user_id</th>
+                                                <th>email</th>
+                                                <th>password</th>
+                                                <th>role</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         
                                         <tbody>
-                                            <c:forEach items="${requestScope.songs}" var="s">
+                                            <c:forEach items="${requestScope.users}" var="u">
                                             <tr>
-                                                <th>${s.id_song}</th>
-                                                <th>${s.name}</th>
-                                                <th>${s.poster}</th>
-                                                <th>${s.linksong}</th>
-                                                <th>${s.description}</th>
-                                                <th><c:forEach items="${s.singers}" var="si">
-                                                            ${si.name} <br/>
-                                                       </c:forEach>   </th>
-                                                <th><c:forEach items="${s.genres}" var="g">
-                                                                    ${g.name_genre} <br/>
-                                                               </c:forEach> </th>
-                                                <td>
-                                                <input type="button" onclick="doUpdate('${s.id_song}');" value="Update"/>
-                                                </td>
-                                                <td>
-                                                    <input type="button" onclick="doDelete('${s.id_song}');" value="Delete"/>
-                                                </td>
+                                                <th>${u.user_id}</th>
+                                                <th>${u.email}</th>
+                                                <th>${u.password}</th>
+                                                <th>${u.role}</th>
+                                                <th>
+                                                    <input type="button" onclick="doDelete('${u.user_id}');" value="Delete"/>
+                                                </th>
                                             </tr>
                                             </c:forEach>
                                         </tbody>

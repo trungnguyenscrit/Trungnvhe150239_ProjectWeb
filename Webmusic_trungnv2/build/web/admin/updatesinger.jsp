@@ -156,6 +156,16 @@
                              <li><a href="${pageContext.request.contextPath}/music/songwithalbum/update">Cập nhật</a></li>
                         </ul>
                     </li>
+                    <li class="nav-label">User</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">User</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="${pageContext.request.contextPath}/music/user/list">Danh sách User</a></li>
+                             <li><a href="${pageContext.request.contextPath}/music/user/insert">Thêm mới</a></li> 
+                        </ul>
+                    </li>
 
 
                 </div>

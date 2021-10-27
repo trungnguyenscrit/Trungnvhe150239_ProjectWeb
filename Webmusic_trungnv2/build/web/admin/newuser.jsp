@@ -140,7 +140,8 @@
                              <li><a href="${pageContext.request.contextPath}/music/songwithalbum/update">Cập nhật</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">User</li>
+                    
+                        <li class="nav-label">User</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">User</span>
@@ -150,7 +151,6 @@
                              <li><a href="${pageContext.request.contextPath}/music/user/insert">Thêm mới</a></li> 
                         </ul>
                     </li>
-
 
                 </div>
             </div>
@@ -179,19 +179,34 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-validation">
-                                        <form class="form-valide" action="update" method="POST" runat="server">
+                                        <form class="form-valide" action="insert" method="POST" runat="server">
                                             <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-username">ID_Genre <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-username">User_id <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    ${requestScope.genres.id_genre}<input type="hidden" class="form-control" id="val-username" name="id_genre" value="${requestScope.genres.id_genre}" >
+                                                    <input type="text" class="form-control" id="val-username" name="user_id" >
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-username">Email <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-username" name="name_genre" value="${requestScope.genres.name_genre}">
+                                                    <input type="text" class="form-control" id="val-username" name="email" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="val-username">Password <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="val-username" name="password" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="val-username">Role <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-6">
+                                                    <input type="radio"  id="val-username" name="role" value="1">Admin
+                                                    <input type="radio"  id="val-username" name="role" value="0">User
                                                 </div>
                                             </div>
 
@@ -219,7 +234,7 @@
             ***********************************-->
             <div class="footer">
                 <div class="copyright">
-                    <p>Copyright &copy; Designed & Developed by Trung Nguyễn . Thanks to <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+                    <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
                 </div>
             </div>
             <!--**********************************
