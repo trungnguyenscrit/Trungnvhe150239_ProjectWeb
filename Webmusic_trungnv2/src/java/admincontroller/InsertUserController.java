@@ -58,10 +58,10 @@ public class InsertUserController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         User u = new User();
-        u.setUser_id(request.getParameter("user_id"));
         u.setEmail(request.getParameter("email"));
         u.setPassword(request.getParameter("password"));
-        u.setRole(Integer.parseInt(request.getParameter("role")));
+        u.setName(request.getParameter("name"));
+        u.setRole(request.getParameter("role"));
         UserDBContext db = new UserDBContext();
         db.insert(u);
         response.sendRedirect("list");

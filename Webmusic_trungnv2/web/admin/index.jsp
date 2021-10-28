@@ -73,11 +73,10 @@
                 </div>
             </div>
         </div>
-                <div class="nk-sidebar">
+        <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">Tổng quan</li>
-                    
                     <li class="nav-label">Bài Hát </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -100,14 +99,15 @@
                             <li><a href="${pageContext.request.contextPath}/music/genre/update">Cập nhật</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">CA SĨ & USER</li>
+                    <li class="nav-label">CA SĨ </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Ca Sĩ</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./customer-list.html">Danh sách ca sĩ</a></li>
-                             <li><a href="./page-register.html">Thêm ca sĩ mới</a></li> 
+                            <li><a href="${pageContext.request.contextPath}/music/singer/list">Danh sách ca sĩ</a></li>
+                             <li><a href="${pageContext.request.contextPath}/music/singer/insert">Thêm mới</a></li> 
+                             <li><a href="${pageContext.request.contextPath}/music/singer/update">Cập nhật</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">ALBUM</li>
@@ -119,6 +119,16 @@
                             <li><a href="${pageContext.request.contextPath}/music/songwithalbum/list">Danh sách Album</a></li>
                              <li><a href="${pageContext.request.contextPath}/music/songwithalbum/insert">Thêm mới</a></li> 
                              <li><a href="${pageContext.request.contextPath}/music/songwithalbum/update">Cập nhật</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">User</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">User</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="${pageContext.request.contextPath}/music/user/list">Danh sách User</a></li>
+                             <li><a href="${pageContext.request.contextPath}/music/user/insert">Thêm mới</a></li> 
                         </ul>
                     </li>
 

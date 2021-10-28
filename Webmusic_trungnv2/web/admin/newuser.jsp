@@ -181,13 +181,6 @@
                                     <div class="form-validation">
                                         <form class="form-valide" action="insert" method="POST" runat="server">
                                             <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-username">User_id <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-username" name="user_id" >
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Email <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
@@ -202,11 +195,18 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" id="val-username" name="name" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Role <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="radio"  id="val-username" name="role" value="1">Admin
-                                                    <input type="radio"  id="val-username" name="role" value="0">User
+                                                    <input type="radio"  id="val-username" name="role" value="True">Admin
+                                                    <input type="radio"  id="val-username" name="role" value="False">User
                                                 </div>
                                             </div>
 

@@ -199,6 +199,7 @@
                                                 <th>user_id</th>
                                                 <th>email</th>
                                                 <th>password</th>
+                                                <th>name</th>
                                                 <th>role</th>
                                                 <th></th>
                                             </tr>
@@ -210,6 +211,7 @@
                                                 <th>${u.user_id}</th>
                                                 <th>${u.email}</th>
                                                 <th>${u.password}</th>
+                                                <th>${u.name}</th>
                                                 <th>${u.role}</th>
                                                 <th>
                                                     <input type="button" onclick="doDelete('${u.user_id}');" value="Delete"/>

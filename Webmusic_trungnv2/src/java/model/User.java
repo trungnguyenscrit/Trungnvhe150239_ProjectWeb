@@ -10,27 +10,37 @@ package model;
  * @author Trung
  */
 public class User {
-    private String user_id;
+    private int user_id;
+    private String name;
     private String email;
     private String password;
-    private int role;
+    private String role;
 
     public User() {
     }
 
-    public User(String user_id, String email, String password, int role) {
+    public User(int user_id, String name, String email, String password, String role) {
         this.user_id = user_id;
+        this.name = name;
         this.email = email;
         this.password = password;
         this.role = role;
     }
 
-    public String getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -49,12 +59,14 @@ public class User {
         this.password = password;
     }
 
-    public int getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(String role) {
         this.role = role;
     }
+
+    
     
 }

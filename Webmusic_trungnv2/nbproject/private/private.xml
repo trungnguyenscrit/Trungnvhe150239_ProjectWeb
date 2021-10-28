@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/dal/SongDBContext.java</file>
+            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/web/css/style.css</file>
+            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/model/User.java</file>
             <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/web/index.jsp</file>
-            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/dal/AlbumDBContext.java</file>
+            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/dal/UserDBContext.java</file>
+            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/homecontroller/UserController.java</file>
+            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/admincontroller/ListUserController.java</file>
+            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/homecontroller/Home.java</file>
         </group>
     </open-files>
 </project-private>

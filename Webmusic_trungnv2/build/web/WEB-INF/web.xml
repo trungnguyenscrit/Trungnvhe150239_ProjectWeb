@@ -76,6 +76,14 @@
         <servlet-name>DeleteUserController</servlet-name>
         <servlet-class>admincontroller.DeleteUserController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>homecontroller.UserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>homecontroller.Home</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListSongController</servlet-name>
         <url-pattern>/music/song/list</url-pattern>
@@ -151,6 +159,14 @@
     <servlet-mapping>
         <servlet-name>DeleteUserController</servlet-name>
         <url-pattern>/music/user/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
