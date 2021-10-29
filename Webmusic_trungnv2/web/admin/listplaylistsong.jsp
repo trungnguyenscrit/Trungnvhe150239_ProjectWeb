@@ -1,22 +1,60 @@
- 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+<!--         Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/admin/images/mi.png">
+         <!--Pignose Calender--> 
+        <link href="${pageContext.request.contextPath}/admin/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+         <!--Chartist--> 
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/plugins/chartist/css/chartist.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+         <!--Custom Stylesheet--> 
         <link href="${pageContext.request.contextPath}/admin/css/style.css" rel="stylesheet">
+        <script> 
+            function doUpdate(id_playlist)
+            {
+                window.location.href = "update?id_playlist=" + id_playlist;
+            }
+            function doDelete(id_playlist)
+            {
+                var c = confirm("are you sure?");
+                if(c)
+                {
+                    window.location.href = "delete?id_playlist=" + id_playlist;
+                }
+            }
+        
+        </script>
     </head>
     <body>
-    <div id="preloader">
-        <div class="loader">
-            <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-            </svg>
+<!--        *******************
+            Preloader start
+        ********************-->
+        <div id="preloader">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                </svg>
+            </div>
         </div>
-    </div>
+<!--        *******************
+            Preloader end
+        ********************
+    
+    
+        **********************************
+        Main wrapper start
+    ***********************************-->
     <div id="main-wrapper">
+<!--
+        **********************************
+            Nav header start
+        ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
@@ -28,6 +66,13 @@
                 </a>
             </div>
         </div>
+<!--        **********************************
+            Nav header end
+        ***********************************
+
+        **********************************
+            Header start
+        ***********************************-->
         <div class="header">
             <div class="header-content clearfix">
 
@@ -37,21 +82,6 @@
                     </div>
                 </div>
                 <div class="header-left">
-                    <div class="input-group icons" style="
-    display: none;
-" >
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i
-                                    class="mdi mdi-magnify"></i></span>
-                        </div>
-                        <input type="search" class="form-control" placeholder="Tìm kiếm"
-                            aria-label="Search Dashboard">
-                        <div class="drop-down animated flipInX d-md-none">
-                            <form action="#">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </form>
-                        </div>
-                    </div>
                 </div>
                 <div class="header-right">
                     <ul class="clearfix">
@@ -73,6 +103,13 @@
                 </div>
             </div>
         </div>
+<!--        **********************************
+            Header end ti-comment-alt
+        ***********************************
+
+        **********************************
+            Sidebar start
+        ***********************************-->
         <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
@@ -142,72 +179,109 @@
                         </ul>
                     </li>
 
-
             </div>
         </div>
+<!--        **********************************
+            Sidebar end
+        ***********************************
+        **********************************
+            Content body start
+        ***********************************-->
         <div class="content-body">
 
-            <div class="container-fluid mt-3">
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Tổng quan</a></li>
+                        <li class="breadcrumb-item active"><a href="product-list.html">Danh sách Playlist</a></li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-1">
+                    <div class="col-12">
+                        <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title text-white">Số lượng các bài hát</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">50+</h2>
-                                    <p class="text-white mb-0"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-2">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Số lượng ca sĩ</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">32+</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-3">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Số lượng thể loại nhạc</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">7+</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card gradient-4">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Số lượng ablum</h3>
-                                <div class="d-inline-block">
-                                    <h2 class="text-white">24+</h2>
+                                <h4 class="card-title">Quản lý Playlist</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered zero-configuration">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>ID_Playlist</th>
+                                                <th>NAME</th>
+                                                <th>DESCRIPTION</th>
+                                                <th>ID_USERCREATE</th>
+                                                <th>Song</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                                <c:forEach items="${requestScope.playlistSongs}" var="p">
+                                            <tr>
+                                               <th>${p.id_playlist}</th>
+                                                <th>${p.name_playlist}</th>
+                                                <th>${p.description}</th>
+                                                <th>${p.id_usercreate}</th>
+                                                <th><c:forEach items="${p.songs}" var="s">
+                                                    ${s.name} <br/>
+                                               </c:forEach></th>
+                                                <th>
+                                                    <input type="button" onclick="doUpdate('${p.id_playlist}');" value="Update"/>
+                                                </th>
+                                                <th>
+                                                    <input type="button" onclick="doDelete('${p.id_playlist}');" value="Delete"/>
+                                                </th>
+                                            </tr>
+                                            </c:forEach>
+                                        </tbody>
+<!--                                            add sp 
+                                         foot -->
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+<!--             #/ container -->
         </div>
+<!--        **********************************
+            Content body end
+        ***********************************
+        
+        
+        **********************************
+            Footer start
+        ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by Trung Nguyen . Special thanks to <a href="https://themeforest.net/user/quixlab">Quixlab</a>
-                    </p>
+                <p>Copyright &copy; Designed & Developed by Trung Nguyễn . Thanks to <a href="https://themeforest.net/user/quixlab">Quixlab</a></p>
             </div>
         </div>
+<!--        **********************************
+            Footer end
+        ***********************************-->
     </div>
+<!--    **********************************
+        Main wrapper end
+    ***********************************
 
+    **********************************
+        Scripts
+    ***********************************-->
     <script src="${pageContext.request.contextPath}/admin/plugins/common/common.min.js"></script>
     <script src="${pageContext.request.contextPath}/admin/js/custom.min.js"></script>
     <script src="${pageContext.request.contextPath}/admin/js/settings.js"></script>
     <script src="${pageContext.request.contextPath}/admin/js/gleek.js"></script>
     <script src="${pageContext.request.contextPath}/admin/js/styleSwitcher.js"></script>
-    <script src="${pageContext.request.contextPath}/admin/js/dashboard/dashboard-1.js"></script>
+
+    <script src="${pageContext.request.contextPath}/admin/plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="${pageContext.request.contextPath}/admin/plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="${pageContext.request.contextPath}/admin/plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
 
 </body>
 </html>

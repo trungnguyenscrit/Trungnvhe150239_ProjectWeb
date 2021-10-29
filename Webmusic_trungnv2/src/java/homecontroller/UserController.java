@@ -92,8 +92,7 @@ public class UserController extends HttpServlet {
                 request.getRequestDispatcher("home").forward(request, response);
             }else{
                 dao.Signup(name, email, pass);
-                request.setAttribute("done", "Dang ky thanh cong");
-                request.getRequestDispatcher("home").forward(request, response);
+                response.sendRedirect("home");
             }  
             }
             

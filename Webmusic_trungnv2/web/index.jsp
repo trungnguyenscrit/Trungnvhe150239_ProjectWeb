@@ -2,6 +2,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -207,6 +208,9 @@
                             <c:if test="${sessionScope.user==null}">
                             <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>register</span></a>
                             <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>
+                            </c:if>
+                            <c:if test="${fn:toUpperCase(sessionScope.user.role) == 'TRUE'}">
+                            <a href="admin" class="ms_btn login_btn" ><span>Manager</span></a>
                             </c:if>
                             
                         </div>

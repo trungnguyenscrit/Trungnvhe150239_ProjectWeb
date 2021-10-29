@@ -84,6 +84,22 @@
         <servlet-name>Home</servlet-name>
         <servlet-class>homecontroller.Home</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Dashboard</servlet-name>
+        <servlet-class>admincontroller.Dashboard</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListPlaylistSongController</servlet-name>
+        <servlet-class>admincontroller.ListPlaylistSongController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertPlaylistSongController</servlet-name>
+        <servlet-class>admincontroller.InsertPlaylistSongController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletePlaylistSongController</servlet-name>
+        <servlet-class>admincontroller.DeletePlaylistSongController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListSongController</servlet-name>
         <url-pattern>/music/song/list</url-pattern>
@@ -167,6 +183,22 @@
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Dashboard</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListPlaylistSongController</servlet-name>
+        <url-pattern>/music/playlist/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertPlaylistSongController</servlet-name>
+        <url-pattern>/music/playlist/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePlaylistSongController</servlet-name>
+        <url-pattern>/music/playlist/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
