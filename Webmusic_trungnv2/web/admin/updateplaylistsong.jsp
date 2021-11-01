@@ -10,22 +10,6 @@
         <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/admin/images/mi.png">
         <!-- Custom Stylesheet -->
         <link href="${pageContext.request.contextPath}/admin/css/style.css" rel="stylesheet">
-        <script>
-            function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result)
-                    .width(150)
-                    .height(200);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-        </script>
 
     </head>
     <body>
@@ -129,8 +113,8 @@
                             </a>
                             <ul aria-expanded="false">
                                 <li><a href="${pageContext.request.contextPath}/music/genre/list" aria-expanded="false">Danh sách thể loại</a></li>
-                            <li><a href="${pageContext.request.contextPath}/music/genre/insert">Thêm mới</a></li>
-                            <li><a href="${pageContext.request.contextPath}/music/genre/update">Cập nhật</a></li>
+                                <li><a href="${pageContext.request.contextPath}/music/genre/insert">Thêm mới</a></li>
+                                <li><a href="${pageContext.request.contextPath}/music/genre/update">Cập nhật</a></li>
                             </ul>
                         </li>
                         <li class="nav-label">CA SĨ</li>
@@ -204,37 +188,45 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-validation">
-                                        <form class="form-valide" action="update" method="POST" >
+                                        <form class="form-valide" action="update" method="POST" runat="server">
                                             <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-username">ID_singer <span class="text-danger">*</span>
+                                                <label class="col-lg-4 col-form-label" for="val-username">ID_Playlist <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    ${requestScope.singers.id_singer}<input type="hidden" class="form-control" id="val-username" name="id_singer" value="${requestScope.singers.id_singer}">
+                                                    ${requestScope.playListSong.id_playlist}<input type="hidden" class="form-control" id="val-username" name="id_playlist" value="${requestScope.playListSong.id_playlist}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-username" name="name" value="${requestScope.singers.name}">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="val-username">Poster <span class="text-danger">*</span>
-                                                </label>
-                                                <div class="col-lg-6">
-                                                    <input type="file" class="form-control" id="val-username imgInp" name="poster" onchange="readURL(this);"  value="${requestScope.singers.poster}">
-                                                    <img id="blah" src="#" alt="your image" />
+                                                    <input type="text" class="form-control" id="val-username" name="name_playlist" value="${requestScope.playListSong.name_playlist}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Description <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-username" name="description" value="${requestScope.singers.description}">
-                                                </div> 
+                                                    <input type="text" class="form-control" id="val-username" name="description" value="${requestScope.playListSong.description}">
+                                                </div>
                                             </div>
                                             
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="val-skill">Song <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-6">
+                                                    <c:forEach items="${requestScope.allsongs}" var="s">
+                                                    <input type="checkbox" 
+                                                           <c:forEach items="${requestScope.playListSong.songs}" var="ch">
+                                                                   <c:if test="${ch.id_song eq s.id_song}">
+                                                           checked="checked"
+                                                           </c:if>
+                                                                </c:forEach>
+                                                                name="id_song" value="${s.id_song}" /> ${s.name}
+                                                    </c:forEach>
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row">
                                                 <div class="col-lg-8 ml-auto">
                                                     <button type="submit" class="btn btn-primary">SAVE</button>
@@ -275,7 +267,6 @@
         ***********************************-->
         <script src="${pageContext.request.contextPath}/admin/plugins/common/common.min.js"></script>
         <!--image code show-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!------>
         <script src="${pageContext.request.contextPath}/admin/js/custom.min.js"></script>
         <script src="${pageContext.request.contextPath}/admin/js/settings.js"></script>

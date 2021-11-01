@@ -148,6 +148,16 @@
                              <li><a href="${pageContext.request.contextPath}/music/user/insert">Thêm mới</a></li> 
                         </ul>
                     </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Playlist</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="${pageContext.request.contextPath}/music/playlist/list">Danh sách Playlist</a></li>
+                             <li><a href="${pageContext.request.contextPath}/music/playlist/insert">Thêm mới</a></li> 
+                             <li><a href="${pageContext.request.contextPath}/music/playlist/update">Cập nhật</a></li>
+                        </ul>
+                    </li>
 
 
             </div>
@@ -196,14 +206,14 @@
                                             <label class="col-lg-4 col-form-label" for="val-username">Poster <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-username" name="poster" value="${requestScope.songs.poster}">
+                                                <input type="file" class="form-control" id="val-username" name="poster" value="${requestScope.songs.poster}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-username">LinkSong <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-username" name="linksong" value="${requestScope.songs.linksong}" >
+                                                <input type="file" class="form-control" id="val-username" name="linksong" value="${requestScope.songs.linksong}" >
                                             </div>
                                         </div>
                                         <div class="form-group row">

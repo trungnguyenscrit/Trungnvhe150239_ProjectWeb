@@ -131,6 +131,16 @@
                              <li><a href="${pageContext.request.contextPath}/music/user/insert">Thêm mới</a></li> 
                         </ul>
                     </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Playlist</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="${pageContext.request.contextPath}/music/playlist/list">Danh sách Playlist</a></li>
+                             <li><a href="${pageContext.request.contextPath}/music/playlist/insert">Thêm mới</a></li> 
+                             <li><a href="${pageContext.request.contextPath}/music/playlist/update">Cập nhật</a></li>
+                        </ul>
+                    </li>
 
 
             </div>

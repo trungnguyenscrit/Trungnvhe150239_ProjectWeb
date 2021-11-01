@@ -20,6 +20,23 @@ import model.Genre;
  * @author Trung
  */
 public class GenreDBContext extends DBContext{
+    
+    public int getCountGenre() {
+        int count = 0;
+        try {
+            String sql = "select COUNT(id_genre) as result from genre";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt("result");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(GenreDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
+    
     public ArrayList<Genre> getGenres(){
         ArrayList<Genre> genres = new ArrayList<>();
         try {

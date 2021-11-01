@@ -74,7 +74,7 @@ public class InsertPlaylistSongController extends HttpServlet {
         Playlist p = new Playlist();
         p.setName_playlist(request.getParameter("name"));
         p.setDescription(request.getParameter("description"));
-        p.setId_playlist(id_usercreate);
+        p.setId_usercreate(id_usercreate);
         String[] sos = request.getParameterValues("id_song");
         if (sos!=null) {
             for (String so : sos) {

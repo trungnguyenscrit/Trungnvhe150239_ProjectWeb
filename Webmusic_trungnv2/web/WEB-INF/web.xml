@@ -104,6 +104,10 @@
         <servlet-name>LogoutController</servlet-name>
         <servlet-class>admincontroller.LogoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdatePlaylistSongController</servlet-name>
+        <servlet-class>admincontroller.UpdatePlaylistSongController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListSongController</servlet-name>
         <url-pattern>/music/song/list</url-pattern>
@@ -207,6 +211,10 @@
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
         <url-pattern>/music/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdatePlaylistSongController</servlet-name>
+        <url-pattern>/music/playlist/update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

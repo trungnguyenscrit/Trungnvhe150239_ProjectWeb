@@ -1,5 +1,6 @@
  
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -153,7 +154,7 @@
                             <div class="card-body">
                                 <h3 class="card-title text-white">Số lượng các bài hát</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">50+</h2>
+                                    <h2 class="text-white">${requestScope.countSong}</h2>
                                     <p class="text-white mb-0"></p>
                                 </div>
                             </div>
@@ -164,7 +165,7 @@
                             <div class="card-body">
                                 <h3 class="card-title text-white">Số lượng ca sĩ</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">32+</h2>
+                                    <h2 class="text-white">${requestScope.countSinger}</h2>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +175,7 @@
                             <div class="card-body">
                                 <h3 class="card-title text-white">Số lượng thể loại nhạc</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">7+</h2>
+                                    <h2 class="text-white">${requestScope.countGenre}</h2>
                                 </div>
                             </div>
                         </div>
@@ -184,7 +185,7 @@
                             <div class="card-body">
                                 <h3 class="card-title text-white">Số lượng ablum</h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">24+</h2>
+                                    <h2 class="text-white">${requestScope.countAlbum}</h2>
                                 </div>
                             </div>
                         </div>

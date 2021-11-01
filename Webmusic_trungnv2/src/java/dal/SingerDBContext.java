@@ -18,6 +18,23 @@ import model.Singer;
  * @author Trung
  */
 public class SingerDBContext extends DBContext{
+    
+    public int getCountSinger() {
+        int count = 0;
+        try {
+            String sql = "select COUNT(id_singer) as result from singer";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt("result");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(SingerDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
+    
     public ArrayList<Singer> getSingers(){
         ArrayList<Singer> singers = new ArrayList<>();
         try {

@@ -19,6 +19,23 @@ import model.Song;
  * @author Trung
  */
 public class AlbumDBContext extends DBContext{
+    
+    public int getCountAlbum() {
+        int count = 0;
+        try {
+            String sql = "select COUNT(id_album) as result from album";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt("result");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AlbumDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
+    
     public ArrayList<Album> getSongWithAlbums(){
         ArrayList<Album> albumwithsongs = new ArrayList<>();
         try {
