@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/admincontroller/UpdateSongWithAlbumController.java</file>
-            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/admincontroller/UpdatePlaylistSongController.java</file>
-            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/web/admin/updateplaylistsong.jsp</file>
-            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/dal/PlaylistSongDBContext.java</file>
-            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/src/java/dal/AlbumDBContext.java</file>
+            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/web/index.jsp</file>
+            <file>file:/C:/Users/Trung/Desktop/Trungnvhe150239_ProjectWeb/Webmusic_trungnv2/web/login.jsp</file>
         </group>
     </open-files>
 </project-private>

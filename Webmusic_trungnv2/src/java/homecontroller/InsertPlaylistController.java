@@ -18,7 +18,7 @@ import model.User;
  *
  * @author Trung
  */
-public class Home extends HttpServlet {
+public class InsertPlaylistController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,15 +32,17 @@ public class Home extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         HttpSession session = request.getSession();
         User acc = null;
         Object u = session.getAttribute("user");
         if (u != null) {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("add_playlist.jsp").forward(request, response);
  
         } else {
             response.sendRedirect("user?action=login");
         }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

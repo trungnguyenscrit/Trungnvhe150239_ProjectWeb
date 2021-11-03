@@ -1,6 +1,8 @@
  
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -103,7 +105,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="top_track.html">
+<!--                        <li><a href="top_track.html">
 						<span class="nav_icon">
 							<span class="icon icon_tracks"></span>
 						</span>
@@ -129,7 +131,7 @@
 							stations
 						</span>
 						</a>
-                        </li>
+                        </li>-->
                     </ul>
                     <ul class="nav_downloads">
                         <li><a href="download.html">
@@ -141,7 +143,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="purchase.html">
+<!--                        <li><a href="purchase.html">
 						<span class="nav_icon">
 							<span class="icon icon_purchased"></span>
 						</span>
@@ -149,7 +151,7 @@
 							purchased
 						</span>
 						</a>
-                        </li>
+                        </li>-->
                         <li><a href="favourite.html">
 						<span class="nav_icon">
 							<span class="icon icon_favourite"></span>
@@ -159,7 +161,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="history.html">
+<!--                        <li><a href="history.html">
 						<span class="nav_icon">
 							<span class="icon icon_history"></span>
 						</span>
@@ -167,7 +169,7 @@
 							history
 						</span>
 						</a>
-                        </li>
+                        </li>-->
                     </ul>
                     <ul class="nav_playlist">
                         <li><a href="feature_playlist.html">
@@ -179,7 +181,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="add_playlist.html" class="active">
+                        <li><a href="${pageContext.request.contextPath}/myplaylist" class="active">
 						<span class="nav_icon">
 							<span class="icon icon_c_playlist"></span>
 						</span>
@@ -203,19 +205,28 @@
 							<img src="images/svg/search.svg" alt="">
 						</span>
                     </div>
-                    <div class="ms_top_trend">
-                        <span><a href="#"  class="ms_color">Trending Songs :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
-                    </div>
                 </div>
                 <div class="ms_top_right">
-                    <div class="ms_top_lang">
-                        <span data-toggle="modal" data-target="#lang_modal">languages <img src="images/svg/lang.svg" alt=""></span>
+                        <div class="ms_top_lang">
+                             <c:if test="${sessionScope.user!=null}">
+                            <span data-toggle="modal" data-target="#lang_modal"> Hello ${sessionScope.user.email}</span>
+                            </c:if>
+                        </div>
+                        <div class="ms_top_btn">
+                            <c:if test="${sessionScope.user!=null}">
+                            <a href="user?action=logout" class="ms_btn reg_btn" ><span>Logout</span></a>
+                            </c:if>
+                            <!---<c:if test="${sessionScope.user==null}">
+                            <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>register</span></a>
+                            <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>
+                            </c:if>--->
+                            ${fn}
+                            <c:if test="${fn:toUpperCase(sessionScope.user.role) == 'TRUE'}">
+                            <a href="admin" class="ms_btn login_btn" ><span>Manager</span></a>
+                            </c:if>
+                            
+                        </div>
                     </div>
-                    <div class="ms_top_btn">
-                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>register</span></a>
-                        <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>
-                    </div>
-                </div>
             </div>
             <!----Live Radio Section Start---->
             <div class="ms_top_artist">
@@ -274,7 +285,7 @@
                 </div>
             </div>
             <!----Featured Playlist Section Start---->
-            <div class="ms_radio_wrapper">
+<!--            <div class="ms_radio_wrapper">
                 <div class="ms_heading">
                     <h1>Featured Playlist</h1>
                     <span class="veiw_all"><a href="#">view more</a></span>
@@ -877,17 +888,17 @@
                         </div>
                     </div>
                     </div>
-                <!-- Add Arrows -->
+                 Add Arrows 
                 <div class="swiper-button-next4 slider_nav_next"></div>
                 <div class="swiper-button-prev4 slider_nav_prev"></div>
-            </div>
+            </div>-->
             <!----Main div close---->
         </div>
         <!----Footer Start---->
         <div class="ms_footer_wrapper">
-            <div class="ms_footer_logo">
+<!--            <div class="ms_footer_logo">
                 <a href="index-2.html"><img src="images/open_logo.png" alt=""></a>
-            </div>
+            </div>-->
             <div class="ms_footer_inner">
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
@@ -896,7 +907,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+<!--                    <div class="col-lg-3 col-md-6">
                         <div class="footer_box footer_app">
                             <h1 class="footer_title">Download our App</h1>
                             <p>Go Mobile with our app.<br> Listen to your favourite songs at just one click. Download Now !</p>
@@ -904,9 +915,9 @@
                             <a href="#" class="foo_app_btn"><img src="images/app_store.jpg" alt="" class="img-fluid"></a>
                             <a href="#" class="foo_app_btn"><img src="images/windows.jpg" alt="" class="img-fluid"></a>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="col-lg-3 col-md-6">
-                        <div class="footer_box footer_subscribe">
+<!--                        <div class="footer_box footer_subscribe">
                             <h1 class="footer_title">subscribe</h1>
                             <p>Subscribe to our newsletter and get latest updates and offers.</p>
                             <form>
@@ -920,7 +931,7 @@
                                     <a href="#" class="ms_btn">sign me up</a>
                                 </div>
                             </form>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="footer_box footer_contacts">
@@ -968,12 +979,12 @@
                 </div>
             </div>
             <!----Copyright---->
-            <div class="col-lg-12">
+<!--            <div class="col-lg-12">
                 <div class="ms_copyright">
                     <div class="footer_border"></div>
-                    <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+                    <p>Thank to <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
                 </div>
-            </div>
+            </div>-->
         </div>
         <!----Audio Player Section---->
         <div class="ms_player_wrapper">

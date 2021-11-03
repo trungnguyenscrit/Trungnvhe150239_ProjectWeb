@@ -46,7 +46,7 @@ public class UserController extends HttpServlet {
             model.User user = dao.checkUser(email, pass);
             if(user == null){
                 request.setAttribute("error", "Tai khoan khong ton tai !");
-                request.getRequestDispatcher("home").forward(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }else{
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
@@ -73,7 +73,7 @@ public class UserController extends HttpServlet {
         if(action.equals("logout")){
             HttpSession session = request.getSession();
             session.removeAttribute("user");
-            response.sendRedirect("home");
+            response.sendRedirect("login.jsp");
         }
         
         if(action.equals("register")){
@@ -85,14 +85,14 @@ public class UserController extends HttpServlet {
             model.User user = dao.checkMail(email);
             if(!pass.equals(repass)){
                 request.setAttribute("pass", "Mat khau khong khop");
-                request.getRequestDispatcher("home").forward(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }else{
               if(user != null){
                 request.setAttribute("mailerror", "Email da ton tai !");
-                request.getRequestDispatcher("home").forward(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }else{
                 dao.Signup(name, email, pass);
-                response.sendRedirect("home");
+                response.sendRedirect("login.jsp");
             }  
             }
             
