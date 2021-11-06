@@ -45,7 +45,7 @@ public class UserController extends HttpServlet {
             UserDBContext dao = new UserDBContext();
             model.User user = dao.checkUser(email, pass);
             if(user == null){
-                request.setAttribute("error", "Tai khoan khong ton tai !");
+//                request.setAttribute("error", "Tai khoan khong ton tai !");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }else{
                 HttpSession session = request.getSession();

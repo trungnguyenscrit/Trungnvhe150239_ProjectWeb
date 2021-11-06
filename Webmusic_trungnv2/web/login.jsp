@@ -30,9 +30,9 @@
             <div class="form-inner">
                 <c:set var="cookie" value="${pageContext.request.cookies}"/>
                <form action="user?action=login" class="login" method="POST">
-                   <h4 style="color: #c41a16; align-content: center">${pass}</h4>
-                   <h4 style="color: #c41a16; align-content: center">${mailerror}</h4>
-                   <h4 style="color: #c41a16; align-content: center">${error}</h4>
+                   <h5 style="color: #c41a16; align-content: center">${pass}</h5>
+                   <h5 style="color: #c41a16; align-content: center">${mailerror}</h5>
+                   <h5 style="color: #c41a16; align-content: center">${error}</h5>
                   <div class="field">
                      <input type="text" placeholder="Email Address" value="${cookie.user_email.value}" name="email" required>
                   </div>
