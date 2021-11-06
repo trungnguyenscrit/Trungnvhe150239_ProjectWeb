@@ -77,7 +77,7 @@ public class UpdateSongWithAlbumController extends HttpServlet {
         a.setId_album(request.getParameter("id_album"));
         a.setName(request.getParameter("name"));
         a.setDescription(request.getParameter("description"));
-        
+        a.setPoster(request.getParameter("poster"));
         String[] songs = request.getParameterValues("id_song");
         if (songs!=null) {
             for (String song : songs) {

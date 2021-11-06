@@ -211,6 +211,7 @@
                                             <tr>
                                                 
                                                 <th>ID_Ablum</th>
+                                                <th>Poster</th>
                                                 <th>NAME</th>
                                                 <th>Description</th>
                                                 <th>Song</th>
@@ -222,6 +223,9 @@
                                                 <c:forEach items="${requestScope.songWithAlbums}" var="sa">
                                             <tr>
                                                <th>${sa.id_album}</th>
+                                               <th><img style="width: 80px;height: 80px;  " 
+                                                                 src="${pageContext.request.contextPath}/image/postersinger/${sa.poster}" alt=""></th>
+                                                <th>${si.description}</th>
                                                 <th>${sa.name}</th>
                                                 <th>${sa.description}</th>
                                                 <th><c:forEach items="${sa.songs}" var="s">

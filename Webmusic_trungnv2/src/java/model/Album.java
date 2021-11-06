@@ -16,13 +16,16 @@ public class Album {
     private String name;
     private String description;
     ArrayList<Song> songs = new ArrayList<>();
+    private String poster;
+
     public Album() {
     }
 
-    public Album(String id_album, String name, String description) {
+    public Album(String id_album, String name, String description, String poster) {
         this.id_album = id_album;
         this.name = name;
         this.description = description;
+        this.poster = poster;
     }
 
     public String getId_album() {
@@ -56,5 +59,14 @@ public class Album {
     public void setSongs(ArrayList<Song> songs) {
         this.songs = songs;
     }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+    
     
 }

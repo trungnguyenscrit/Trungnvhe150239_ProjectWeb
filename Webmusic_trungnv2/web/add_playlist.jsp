@@ -61,10 +61,10 @@
             <div class="ms_sidemenu_inner">
 				<div class="ms_logo_inner">
 					<div class="ms_logo">
-						<a href="index-2.html"><img src="images/logo.png" alt="" class="img-fluid"/></a>
+						<a href="${pageContext.request.contextPath}/home"><img src="images/logo.png" alt="" class="img-fluid"/></a>
 					</div>
 					<div class="ms_logo_open">
-						<a href="index-2.html"><img src="images/open_logo.png" alt="" class="img-fluid"/></a>
+						<a href="${pageContext.request.contextPath}/home"><img src="images/open_logo.png" alt="" class="img-fluid"/></a>
 					</div>
 				</div>
                 <div class="ms_nav_wrapper">
@@ -78,7 +78,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="album.html">
+                        <li><a href="${pageContext.request.contextPath}/album/list">
 						<span class="nav_icon">
 							<span class="icon icon_albums"></span>
 						</span>
@@ -96,7 +96,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="genres.html">
+                        <li><a href="${pageContext.request.contextPath}/genre/list">
 						<span class="nav_icon">
 							<span class="icon icon_genres"></span>
 						</span>
@@ -304,7 +304,7 @@
                 </div>
             </div>
 
-            </div>-->
+            </div>
         </div>
         <!----Audio Player Section---->
         <div class="ms_player_wrapper">

@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package admincontroller;
+package homecontroller;
 
 import dal.AlbumDBContext;
-import dal.SongDBContext;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Album;
-import model.Song;
+import model.User;
 
 /**
  *
  * @author Trung
  */
-public class InsertSongWithAlbumController extends HttpServlet {
+public class AlbumHomeController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +31,22 @@ public class InsertSongWithAlbumController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
+        User acc = null;
+        Object u = session.getAttribute("user");
+        if (u != null) {
+            AlbumDBContext db = new AlbumDBContext();
+        ArrayList<Album> songWithAlbums = db.getSongWithAlbums();
+        request.setAttribute("songWithAlbums", songWithAlbums);
+            request.getRequestDispatcher("../album.jsp").forward(request, response);
+
+        } else {
+            response.sendRedirect("../user?action=login");
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -46,12 +60,7 @@ public class InsertSongWithAlbumController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        
-        SongDBContext sdb = new SongDBContext();
-        ArrayList<Song> songs = sdb.getSongs();
-        request.setAttribute("songs", songs);
-        request.getRequestDispatcher("../../admin/newsongwithalbum.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -65,25 +74,7 @@ public class InsertSongWithAlbumController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        Album a = new Album();
-        a.setId_album(request.getParameter("id_album"));
-        a.setPoster(request.getParameter("poster"));
-        a.setName(request.getParameter("name"));
-        a.setDescription(request.getParameter("description"));
-        
-        String[] sos = request.getParameterValues("id_song");
-        if (sos!=null) {
-            for (String so : sos) {
-                Song s = new Song();
-                s.setId_song(so);
-                a.getSongs().add(s);
-            }
-        }
-        
-        AlbumDBContext db = new AlbumDBContext();
-        db.insertsongwithalbum(a);
-        response.sendRedirect("list");
+        processRequest(request, response);
     }
 
     /**
