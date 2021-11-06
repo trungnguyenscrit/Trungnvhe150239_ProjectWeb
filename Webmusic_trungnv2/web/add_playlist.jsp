@@ -87,12 +87,12 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="artist.html">
+                        <li><a href="${pageContext.request.contextPath}/singer/list">
 						<span class="nav_icon">
 							<span class="icon icon_artists"></span>
 						</span>
 						<span class="nav_text">
-							artists
+							Singer
 						</span>
 						</a>
                         </li>
@@ -105,33 +105,6 @@
 						</span>
 						</a>
                         </li>
-<!--                        <li><a href="top_track.html">
-						<span class="nav_icon">
-							<span class="icon icon_tracks"></span>
-						</span>
-						<span class="nav_text">
-							top tracks
-						</span>
-						</a>
-                        </li>
-                        <li><a href="free_music.html">
-						<span class="nav_icon">
-							<span class="icon icon_music"></span>
-						</span>
-						<span class="nav_text">
-							free music
-						</span>
-						</a>
-                        </li>
-                        <li><a href="stations.html">
-						<span class="nav_icon">
-							<span class="icon icon_station"></span>
-						</span>
-						<span class="nav_text">
-							stations
-						</span>
-						</a>
-                        </li>-->
                     </ul>
                     <ul class="nav_downloads">
                         <li><a href="download.html">
@@ -143,15 +116,6 @@
 						</span>
 						</a>
                         </li>
-<!--                        <li><a href="purchase.html">
-						<span class="nav_icon">
-							<span class="icon icon_purchased"></span>
-						</span>
-						<span class="nav_text">
-							purchased
-						</span>
-						</a>
-                        </li>-->
                         <li><a href="favourite.html">
 						<span class="nav_icon">
 							<span class="icon icon_favourite"></span>
@@ -161,15 +125,6 @@
 						</span>
 						</a>
                         </li>
-<!--                        <li><a href="history.html">
-						<span class="nav_icon">
-							<span class="icon icon_history"></span>
-						</span>
-						<span class="nav_text">
-							history
-						</span>
-						</a>
-                        </li>-->
                     </ul>
                     <ul class="nav_playlist">
                         <li><a href="feature_playlist.html">

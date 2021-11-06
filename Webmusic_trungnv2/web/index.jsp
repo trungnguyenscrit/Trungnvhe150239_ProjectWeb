@@ -76,12 +76,12 @@
                                     </span>
                                 </a>
                             </li>
-                            <li><a href="artist.html" title="Artists">
+                            <li><a href="${pageContext.request.contextPath}/singer/list" title="Singer">
                                     <span class="nav_icon">
                                         <span class="icon icon_artists"></span>
                                     </span>
                                     <span class="nav_text">
-                                        artists
+                                        Singer
                                     </span>
                                 </a>
                             </li>
