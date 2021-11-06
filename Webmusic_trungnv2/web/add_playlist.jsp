@@ -9,167 +9,176 @@
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
-<!--<![endif]-->
-<!-- Begin Head -->
+    <!--<![endif]-->
+    <!-- Begin Head -->
 
 
-<head>
-    <title>Miraculous - Online Music Store Html Template</title>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="description" content="Music">
-    <meta name="keywords" content="">
-    <meta name="author" content="kamleshyadav">
-    <meta name="MobileOptimized" content="320">
-    <!--Start Style -->
-    <link rel="stylesheet" type="text/css" href="css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="js/plugins/swiper/css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="js/plugins/nice_select/nice-select.css">
-    <link rel="stylesheet" type="text/css" href="js/plugins/player/volume.css">
-	<link rel="stylesheet" type="text/css" href="js/plugins/scroll/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- Favicon Link -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-</head>
-<body>
-	<!----Loader---->
-	<div class="ms_inner_loader">
-		<div class="ms_loader">
-			<div class="ms_bars">
-				<div class="bar"></div>				
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-			</div>
-		</div>
-	</div>
-    <!----Main Wrapper Start---->
-    <div class="ms_main_wrapper">
-        <!---Side Menu Start--->
-        <div class="ms_sidemenu_wrapper">
-            <div class="ms_nav_close">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </div>
-            <div class="ms_sidemenu_inner">
-				<div class="ms_logo_inner">
-					<div class="ms_logo">
-						<a href="${pageContext.request.contextPath}/home"><img src="images/logo.png" alt="" class="img-fluid"/></a>
-					</div>
-					<div class="ms_logo_open">
-						<a href="${pageContext.request.contextPath}/home"><img src="images/open_logo.png" alt="" class="img-fluid"/></a>
-					</div>
-				</div>
-                <div class="ms_nav_wrapper">
-                    <ul>
-                        <li><a href="${pageContext.request.contextPath}/home">
-						<span class="nav_icon">
-							<span class="icon icon_discover"></span>
-						</span>
-						<span class="nav_text">
-							discover
-						</span>
-						</a>
-                        </li>
-                        <li><a href="${pageContext.request.contextPath}/album/list">
-						<span class="nav_icon">
-							<span class="icon icon_albums"></span>
-						</span>
-						<span class="nav_text">
-							albums
-						</span>
-						</a>
-                        </li>
-                        <li><a href="${pageContext.request.contextPath}/singer/list">
-						<span class="nav_icon">
-							<span class="icon icon_artists"></span>
-						</span>
-						<span class="nav_text">
-							Singer
-						</span>
-						</a>
-                        </li>
-                        <li><a href="${pageContext.request.contextPath}/genre/list">
-						<span class="nav_icon">
-							<span class="icon icon_genres"></span>
-						</span>
-						<span class="nav_text">
-							genres
-						</span>
-						</a>
-                        </li>
-                    </ul>
-                    <ul class="nav_downloads">
-                        <li><a href="download.html">
-						<span class="nav_icon">
-							<span class="icon icon_download"></span>
-						</span>
-						<span class="nav_text">
-							downloads
-						</span>
-						</a>
-                        </li>
-                        <li><a href="favourite.html">
-						<span class="nav_icon">
-							<span class="icon icon_favourite"></span>
-						</span>
-						<span class="nav_text">
-							favourites
-						</span>
-						</a>
-                        </li>
-                    </ul>
-                    <ul class="nav_playlist">
-                        <li><a href="feature_playlist.html">
-						<span class="nav_icon">
-							<span class="icon icon_fe_playlist"></span>
-						</span>
-						<span class="nav_text">
-							featured playlist
-						</span>
-						</a>
-                        </li>
-                        <li><a href="${pageContext.request.contextPath}/myplaylist" class="active">
-						<span class="nav_icon">
-							<span class="icon icon_c_playlist"></span>
-						</span>
-						<span class="nav_text">
-							create playlist
-						</span>
-						</a>
-                        </li>
-                    </ul>
+    <head>
+        <title>Miraculous - Online Music Store Html Template</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Music">
+        <meta name="keywords" content="">
+        <meta name="author" content="kamleshyadav">
+        <meta name="MobileOptimized" content="320">
+        <!--Start Style -->
+        <link rel="stylesheet" type="text/css" href="css/fonts.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="js/plugins/swiper/css/swiper.min.css">
+        <link rel="stylesheet" type="text/css" href="js/plugins/nice_select/nice-select.css">
+        <link rel="stylesheet" type="text/css" href="js/plugins/player/volume.css">
+        <link rel="stylesheet" type="text/css" href="js/plugins/scroll/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- Favicon Link -->
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    </head>
+    <body>
+        <!----Loader---->
+        <div class="ms_inner_loader">
+            <div class="ms_loader">
+                <div class="ms_bars">
+                    <div class="bar"></div>				
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
             </div>
         </div>
-        <!---Main Content Start--->
-        <div class="ms_content_wrapper padder_top90">
-            <!---Header--->
-            <div class="ms_header">
-                <div class="ms_top_left">
-                    <div class="ms_top_search">
-                        <input type="text" class="form-control" placeholder="Search Music Here..">
-                        <span class="search_icon">
-							<img src="images/svg/search.svg" alt="">
-						</span>
+        <!----Main Wrapper Start---->
+        <div class="ms_main_wrapper">
+            <!---Side Menu Start--->
+            <div class="ms_sidemenu_wrapper">
+                <div class="ms_nav_close">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
+                <div class="ms_sidemenu_inner">
+                    <div class="ms_logo_inner">
+                        <div class="ms_logo">
+                            <a href="${pageContext.request.contextPath}/home"><img src="images/logo.png" alt="" class="img-fluid"/></a>
+                        </div>
+                        <div class="ms_logo_open">
+                            <a href="${pageContext.request.contextPath}/home"><img src="images/open_logo.png" alt="" class="img-fluid"/></a>
+                        </div>
+                    </div>
+                    <div class="ms_nav_wrapper">
+                        <ul>
+                            <li><a href="${pageContext.request.contextPath}/home">
+                                    <span class="nav_icon">
+                                        <span class="icon icon_discover"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        discover
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a href="${pageContext.request.contextPath}/album/list">
+                                    <span class="nav_icon">
+                                        <span class="icon icon_albums"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        albums
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a href="${pageContext.request.contextPath}/singer/list">
+                                    <span class="nav_icon">
+                                        <span class="icon icon_artists"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        Singer
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a href="${pageContext.request.contextPath}/genre/list">
+                                    <span class="nav_icon">
+                                        <span class="icon icon_genres"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        genres
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a href="${pageContext.request.contextPath}/playlist/list" title="Playlists"  >
+                                    <span class="nav_icon">
+                                        <span class="icon icon_music"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        Playlists
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav_downloads">
+                            <li><a href="download.html">
+                                    <span class="nav_icon">
+                                        <span class="icon icon_download"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        downloads
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a href="favourite.html">
+                                    <span class="nav_icon">
+                                        <span class="icon icon_favourite"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        favourites
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav_playlist">
+                            <li><a href="feature_playlist.html">
+                                    <span class="nav_icon">
+                                        <span class="icon icon_fe_playlist"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        featured playlist
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a href="${pageContext.request.contextPath}/myplaylist" class="active">
+                                    <span class="nav_icon">
+                                        <span class="icon icon_c_playlist"></span>
+                                    </span>
+                                    <span class="nav_text">
+                                        create playlist
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="ms_top_right">
+            </div>
+            <!---Main Content Start--->
+            <div class="ms_content_wrapper padder_top90">
+                <!---Header--->
+                <div class="ms_header">
+                    <div class="ms_top_left">
+                        <div class="ms_top_search">
+                            <input type="text" class="form-control" placeholder="Search Music Here..">
+                            <span class="search_icon">
+                                <img src="images/svg/search.svg" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="ms_top_right">
                         <div class="ms_top_lang">
-                             <c:if test="${sessionScope.user!=null}">
-                            <span data-toggle="modal" data-target="#lang_modal"> Hello ${sessionScope.user.email}</span>
+                            <c:if test="${sessionScope.user!=null}">
+                                <span data-toggle="modal" data-target="#lang_modal"> Hello ${sessionScope.user.email}</span>
                             </c:if>
                         </div>
                         <div class="ms_top_btn">
                             <c:if test="${sessionScope.user!=null}">
-                            <a href="user?action=logout" class="ms_btn reg_btn" ><span>Logout</span></a>
+                                <a href="user?action=logout" class="ms_btn reg_btn" ><span>Logout</span></a>
                             </c:if>
                             <!---<c:if test="${sessionScope.user==null}">
                             <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>register</span></a>
@@ -177,140 +186,140 @@
                             </c:if>--->
                             ${fn}
                             <c:if test="${fn:toUpperCase(sessionScope.user.role) == 'TRUE'}">
-                            <a href="admin" class="ms_btn login_btn" ><span>Manager</span></a>
+                                <a href="admin" class="ms_btn login_btn" ><span>Manager</span></a>
                             </c:if>
-                            
+
                         </div>
                     </div>
+                </div>
+                <!----Live Radio Section Start---->
+                <div class="ms_top_artist">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ms_heading">
+                                    <h1>Your Playlists</h1>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="ms_rcnt_box marger_bottom25">
+                                    <div class="ms_rcnt_box_img">
+                                        <img src="images/radio/img1.jpg" alt="" class="img-fluid">
+                                        <div class="ms_main_overlay">
+                                            <div class="ms_box_overlay"></div>
+                                            <div class="ms_play_icon">
+                                                <img src="images/svg/play.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ms_rcnt_box_text">
+                                        <h3><a href="#">My Favourites</a></h3>
+                                        <p>15 songs</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="ms_rcnt_box marger_bottom25">
+                                    <div class="ms_rcnt_box_img">
+                                        <img src="images/radio/img2.jpg" alt="" class="img-fluid">
+                                        <div class="ms_main_overlay">
+                                            <div class="ms_box_overlay"></div>
+                                            <div class="ms_play_icon">
+                                                <img src="images/svg/play.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ms_rcnt_box_text">
+                                        <h3><a href="#">My Music</a></h3>
+                                        <p>15 songs</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="ms_rcnt_box marger_bottom25">
+                                    <div class="create_playlist">
+                                        <i class="ms_icon icon_playlist"></i>
+                                    </div>
+                                    <div class="ms_rcnt_box_text">
+                                        <h3><a href="#">Create New Playlist</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!----Featured Playlist Section Start---->
+
+                <!----Main div close---->
             </div>
-            <!----Live Radio Section Start---->
-            <div class="ms_top_artist">
-                <div class="container-fluid">
+            <!----Footer Start---->
+            <div class="ms_footer_wrapper">
+
+                <div class="ms_footer_inner">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="ms_heading">
-                                <h1>Your Playlists</h1>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer_box">
+                                <h1 class="footer_title">miraculous music stations</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-6">
-                            <div class="ms_rcnt_box marger_bottom25">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="images/radio/img1.jpg" alt="" class="img-fluid">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
-                                            <img src="images/svg/play.svg" alt="">
+
+                        <div class="col-lg-3 col-md-6">
+
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer_box footer_contacts">
+                                <h1 class="footer_title">contact us</h1>
+                                <ul class="foo_con_info">
+                                    <li>
+                                        <div class="foo_con_icon">
+                                            <img src="images/svg/phone.svg" alt="">
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">My Favourites</a></h3>
-                                    <p>15 songs</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6">
-                            <div class="ms_rcnt_box marger_bottom25">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="images/radio/img2.jpg" alt="" class="img-fluid">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
-                                            <img src="images/svg/play.svg" alt="">
+                                        <div class="foo_con_data">
+                                            <span class="con-title">Call us :</span>
+                                            <span>(+1) 202-555-0176, (+1) 2025-5501</span>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">My Music</a></h3>
-                                    <p>15 songs</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="ms_rcnt_box marger_bottom25">
-                                <div class="create_playlist">
-                                    <i class="ms_icon icon_playlist"></i>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Create New Playlist</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!----Featured Playlist Section Start---->
-
-            <!----Main div close---->
-        </div>
-        <!----Footer Start---->
-        <div class="ms_footer_wrapper">
-
-            <div class="ms_footer_inner">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer_box">
-                            <h1 class="footer_title">miraculous music stations</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer_box footer_contacts">
-                            <h1 class="footer_title">contact us</h1>
-                            <ul class="foo_con_info">
-                                <li>
-                                    <div class="foo_con_icon">
-                                        <img src="images/svg/phone.svg" alt="">
-                                    </div>
-                                    <div class="foo_con_data">
-                                        <span class="con-title">Call us :</span>
-                                        <span>(+1) 202-555-0176, (+1) 2025-5501</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="foo_con_icon">
-                                        <img src="images/svg/message.svg" alt="">
-                                    </div>
-                                    <div class="foo_con_data">
-                                        <span class="con-title">email us :</span>
-                                        <span><a href="#">demo@mail.com </a>, <a href="#">dummy@mail.com</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="foo_con_icon">
-                                        <img src="images/svg/add.svg" alt="">
-                                    </div>
-                                    <div class="foo_con_data">
-                                        <span class="con-title">walk in :</span>
-                                        <span>598 Old House Drive, London</span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="foo_sharing">
-                                <div class="share_title">follow us :</div>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    </li>
+                                    <li>
+                                        <div class="foo_con_icon">
+                                            <img src="images/svg/message.svg" alt="">
+                                        </div>
+                                        <div class="foo_con_data">
+                                            <span class="con-title">email us :</span>
+                                            <span><a href="#">demo@mail.com </a>, <a href="#">dummy@mail.com</a></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="foo_con_icon">
+                                            <img src="images/svg/add.svg" alt="">
+                                        </div>
+                                        <div class="foo_con_data">
+                                            <span class="con-title">walk in :</span>
+                                            <span>598 Old House Drive, London</span>
+                                        </div>
+                                    </li>
                                 </ul>
+                                <div class="foo_sharing">
+                                    <div class="share_title">follow us :</div>
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
             </div>
         </div>
         <!----Audio Player Section---->
         <div class="ms_player_wrapper">
-			<div class="ms_player_close">
-				<i class="fa fa-angle-up" aria-hidden="true"></i>
-			</div>
+            <div class="ms_player_close">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+            </div>
             <div class="player_mid">
                 <div class="audio-player">
                     <div id="jquery_jplayer_1" class="jp-jplayer"></div>
@@ -340,13 +349,13 @@
                         <div class="jp_queue_wrapper">
                             <span class="que_text" id="myPlaylistQueue"><i class="fa fa-angle-up" aria-hidden="true"></i> queue</span>
                             <div id="playlist-wrap" class="jp-playlist">
-								<div class="jp_queue_cls"><i class="fa fa-times" aria-hidden="true"></i></div>
+                                <div class="jp_queue_cls"><i class="fa fa-times" aria-hidden="true"></i></div>
                                 <h2>queue</h2>
-								<div class="jp_queue_list_inner">
-									<ul>
-										<li>&nbsp;</li>
-									</ul>
-								</div>
+                                <div class="jp_queue_list_inner">
+                                    <ul>
+                                        <li>&nbsp;</li>
+                                    </ul>
+                                </div>
                                 <div class="jp_queue_btn">
                                     <a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">clear</a>
                                     <a href="clear_modal.html" class="ms_save" data-toggle="modal" data-target="#save_modal">save</a>
@@ -357,14 +366,14 @@
                             <div class="jp-gui jp-interface flex-wrap">
                                 <div class="jp-controls flex-item">
                                     <button class="jp-previous" tabindex="0">
-					<i class="ms_play_control"></i>
-				</button>
+                                        <i class="ms_play_control"></i>
+                                    </button>
                                     <button class="jp-play" tabindex="0">
-					<i class="ms_play_control"></i>
-				</button>
+                                        <i class="ms_play_control"></i>
+                                    </button>
                                     <button class="jp-next" tabindex="0">
-					<i class="ms_play_control"></i>
-				</button>
+                                        <i class="ms_play_control"></i>
+                                    </button>
                                 </div>
                                 <div class="jp-progress-container flex-item">
                                     <div class="jp-time-holder">
@@ -398,17 +407,17 @@
                                 </div>
                                 <div class="jp-toggles flex-item">
                                     <button class="jp-shuffle" tabindex="0" title="Shuffle">
-				<i class="ms_play_control"></i></button>
-				<button class="jp-repeat" tabindex="0" title="Repeat"><i class="ms_play_control"></i></button>
+                                        <i class="ms_play_control"></i></button>
+                                    <button class="jp-repeat" tabindex="0" title="Repeat"><i class="ms_play_control"></i></button>
                                 </div>
                                 <div class="jp_quality_optn custom_select">
                                     <select>
-						<option>quality</option>
-						<option value="1">HD</option>
-						<option value="2">High</option>
-						<option value="3">medium</option>
-						<option value="4">low</option>
-					</select>
+                                        <option>quality</option>
+                                        <option value="1">HD</option>
+                                        <option value="2">High</option>
+                                        <option value="3">medium</option>
+                                        <option value="4">low</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -426,8 +435,8 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+                        <i class="fa_icon form_close"></i>
+                    </button>
                     <div class="modal-body">
                         <div class="ms_register_img">
                             <img src="images/register_img.png" alt="" class="img-fluid" />
@@ -437,26 +446,26 @@
                             <div class="form-group">
                                 <input type="text" placeholder="Enter Your Name" class="form-control">
                                 <span class="form_icon">
-							<i class="fa_icon form-user" aria-hidden="true"></i>
-							</span>
+                                    <i class="fa_icon form-user" aria-hidden="true"></i>
+                                </span>
                             </div>
                             <div class="form-group">
                                 <input type="text" placeholder="Enter Your Email" class="form-control">
                                 <span class="form_icon">
-							<i class="fa_icon form-envelope" aria-hidden="true"></i>
-						</span>
+                                    <i class="fa_icon form-envelope" aria-hidden="true"></i>
+                                </span>
                             </div>
                             <div class="form-group">
                                 <input type="password" placeholder="Enter Password" class="form-control">
                                 <span class="form_icon">
-						<i class="fa_icon form-lock" aria-hidden="true"></i>
-						</span>
+                                    <i class="fa_icon form-lock" aria-hidden="true"></i>
+                                </span>
                             </div>
                             <div class="form-group">
                                 <input type="password" placeholder="Confirm Password" class="form-control">
                                 <span class="form_icon">
-						<i class=" fa_icon form-lock" aria-hidden="true"></i>
-						</span>
+                                    <i class=" fa_icon form-lock" aria-hidden="true"></i>
+                                </span>
                             </div>
                             <a href="#" class="ms_btn">register now</a>
                             <p>Already Have An Account? <a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">login here</a></p>
@@ -471,8 +480,8 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+                        <i class="fa_icon form_close"></i>
+                    </button>
                     <div class="modal-body">
                         <div class="ms_register_img">
                             <img src="images/register_img.png" alt="" class="img-fluid" />
@@ -482,20 +491,20 @@
                             <div class="form-group">
                                 <input type="text" placeholder="Enter Your Email" class="form-control">
                                 <span class="form_icon">
-							<i class="fa_icon form-envelope" aria-hidden="true"></i>
-						</span>
+                                    <i class="fa_icon form-envelope" aria-hidden="true"></i>
+                                </span>
                             </div>
                             <div class="form-group">
                                 <input type="password" placeholder="Enter Password" class="form-control">
                                 <span class="form_icon">
-						<i class="fa_icon form-lock" aria-hidden="true"></i>
-						</span>
+                                    <i class="fa_icon form-lock" aria-hidden="true"></i>
+                                </span>
                             </div>
                             <div class="remember_checkbox">
                                 <label>Keep me signed in
-							<input type="checkbox">
-							<span class="checkmark"></span>
-						</label>
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
                             </div>
                             <a href="profile.html" class="ms_btn" target="_blank">login now</a>
                             <div class="popup_forgot">
@@ -515,81 +524,81 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+                        <i class="fa_icon form_close"></i>
+                    </button>
                     <div class="modal-body">
                         <h1>language selection</h1>
                         <p>Please select the language(s) of the music you listen to.</p>
                         <ul class="lang_list">
                             <li>
                                 <label class="lang_check_label">
-							English 
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    English 
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							hindi
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    hindi
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							punjabi
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    punjabi
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							French
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    French
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							 German 
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    German 
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							Spanish
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    Spanish
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							Chinese
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    Chinese
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							Japanese 
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    Japanese 
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							Arabic
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    Arabic
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                             <li>
                                 <label class="lang_check_label">
-							 Italian
-							<input type="checkbox" name="check"> 
-							<span class="label-text"></span>
-							</label>
+                                    Italian
+                                    <input type="checkbox" name="check"> 
+                                    <span class="label-text"></span>
+                                </label>
                             </li>
                         </ul>
                         <div class="ms_lang_btn">
@@ -600,60 +609,60 @@
             </div>
         </div>
     </div>
-	<!----Queue Clear Model ---->
-	<div class="ms_clear_modal">
-		<div id="clear_modal" class="modal  centered-modal" role="dialog">
+    <!----Queue Clear Model ---->
+    <div class="ms_clear_modal">
+        <div id="clear_modal" class="modal  centered-modal" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+                        <i class="fa_icon form_close"></i>
+                    </button>
                     <div class="modal-body">
-						<h1>Are you sure you want to clear your queue?</h1>
-						<div class="clr_modal_btn">
-							<a href="#">clear all</a>
-							<a href="#">cancel</a>
-						</div>
+                        <h1>Are you sure you want to clear your queue?</h1>
+                        <div class="clr_modal_btn">
+                            <a href="#">clear all</a>
+                            <a href="#">cancel</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-	</div>
-	<!----Queue Save Modal---->
-	<div class="ms_save_modal">
-		<div id="save_modal" class="modal  centered-modal" role="dialog">
+    </div>
+    <!----Queue Save Modal---->
+    <div class="ms_save_modal">
+        <div id="save_modal" class="modal  centered-modal" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+                        <i class="fa_icon form_close"></i>
+                    </button>
                     <div class="modal-body">
-						<h1>Log in to start sharing your music!</h1>
-						<div class="save_modal_btn">
-							<a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> continue with google </a>
-							<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> continue with facebook</a>
-						</div>
-						<div class="ms_save_email">
-							<h3>or use your email</h3>
-							<div class="save_input_group">
-								<input type="text" placeholder="Enter Your Name" class="form-control">
-							</div>
-							<div class="save_input_group">
+                        <h1>Log in to start sharing your music!</h1>
+                        <div class="save_modal_btn">
+                            <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> continue with google </a>
+                            <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> continue with facebook</a>
+                        </div>
+                        <div class="ms_save_email">
+                            <h3>or use your email</h3>
+                            <div class="save_input_group">
+                                <input type="text" placeholder="Enter Your Name" class="form-control">
+                            </div>
+                            <div class="save_input_group">
                                 <input type="password" placeholder="Enter Password" class="form-control">
                             </div>
-							<button class="save_btn">Log in</button>
-						</div>
-						<div class="ms_dnt_have">
-						    <span>Dont't have an account ?</span>
-							<a href="javascript:;" class="hideCurrentModel" data-toggle="modal" data-target="#myModal">Register Now</a>
-						</div>
+                            <button class="save_btn">Log in</button>
+                        </div>
+                        <div class="ms_dnt_have">
+                            <span>Dont't have an account ?</span>
+                            <a href="javascript:;" class="hideCurrentModel" data-toggle="modal" data-target="#myModal">Register Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-	</div>
+    </div>
     <!--Main js file Style-->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -663,7 +672,7 @@
     <script type="text/javascript" src="js/plugins/player/audio-player.js"></script>
     <script type="text/javascript" src="js/plugins/player/volume.js"></script>
     <script type="text/javascript" src="js/plugins/nice_select/jquery.nice-select.min.js"></script>
-	<script type="text/javascript" src="js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
 </body>
 

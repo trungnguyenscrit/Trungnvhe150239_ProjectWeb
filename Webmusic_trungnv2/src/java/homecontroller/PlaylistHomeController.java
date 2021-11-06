@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package admincontroller;
+package homecontroller;
 
 import dal.PlaylistSongDBContext;
-import dal.SongDBContext;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Playlist;
-import model.Song;
+import model.User;
 
 /**
  *
  * @author Trung
  */
-public class UpdatePlaylistSongController extends HttpServlet {
+public class PlaylistHomeController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +31,22 @@ public class UpdatePlaylistSongController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-     
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
+        User acc = null;
+        Object u = session.getAttribute("user");
+        if (u != null) {
+            PlaylistSongDBContext db = new PlaylistSongDBContext();
+            ArrayList<Playlist> playlistSongs = db.getPlaylistSong();
+            request.setAttribute("playlistSongs", playlistSongs);
+            request.getRequestDispatcher("../playlist.jsp").forward(request, response);
+
+        } else {
+            response.sendRedirect("../user?action=login");
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -46,18 +60,7 @@ public class UpdatePlaylistSongController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        int id = Integer.parseInt(request.getParameter("id_playlist"));
-        PlaylistSongDBContext db = new PlaylistSongDBContext();
-        Playlist playListSong = db.getPlayListSong(id);
-        request.setAttribute("playListSong", playListSong);
-        
-        SongDBContext sdb = new SongDBContext();
-        ArrayList<Song> allsongs = sdb.getSongs();
-        
-        request.setAttribute("allsongs", allsongs);
-        
-        request.getRequestDispatcher("../../admin/updateplaylistsong.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -71,26 +74,7 @@ public class UpdatePlaylistSongController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        Playlist p = new Playlist();
-        p.setId_playlist(Integer.parseInt(request.getParameter("id_playlist")));
-        p.setPoster(request.getParameter("poster"));
-        p.setName_playlist(request.getParameter("name_playlist"));
-        p.setDescription(request.getParameter("description"));
-        
-        String[] songs = request.getParameterValues("id_song");
-        if (songs!=null) {
-            for (String song : songs) {
-                Song so = new Song();
-                so.setId_song(song);
-                p.getSongs().add(so);
-            }
-        }
-        
-        PlaylistSongDBContext pdb = new PlaylistSongDBContext();
-        pdb.updatePlaylistSong(p);
-        response.sendRedirect("list");
-        
+        processRequest(request, response);
     }
 
     /**

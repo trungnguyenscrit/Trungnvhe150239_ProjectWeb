@@ -211,6 +211,7 @@
                                                 
                                                 <th>ID_Playlist</th>
                                                 <th>NAME</th>
+                                                <th>POSTER</th>
                                                 <th>DESCRIPTION</th>
                                                 <th>ID_USERCREATE</th>
                                                 <th>Song</th>
@@ -222,6 +223,8 @@
                                                 <c:forEach items="${requestScope.playlistSongs}" var="p">
                                             <tr>
                                                <th>${p.id_playlist}</th>
+                                               <th><img style="width: 100px;height: 100px;  " 
+                                                                 src="${pageContext.request.contextPath}/image/posterplaylist/${p.poster}" alt=""></th>
                                                 <th>${p.name_playlist}</th>
                                                 <th>${p.description}</th>
                                                 <th>${p.id_usercreate}</th>

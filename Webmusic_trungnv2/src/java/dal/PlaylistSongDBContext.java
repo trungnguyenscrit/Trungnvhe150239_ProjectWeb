@@ -26,7 +26,7 @@ public class PlaylistSongDBContext extends DBContext {
             String sql = "SELECT [id_playlist]\n"
                     + "      ,[name_playlist]\n"
                     + "      ,[description]\n"
-                    + "      ,[id_usercreate]\n"
+                    + "      ,[id_usercreate],[poster]\n"
                     + "  FROM [playlist]";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
@@ -36,7 +36,7 @@ public class PlaylistSongDBContext extends DBContext {
                 p.setName_playlist(rs.getString("name_playlist"));
                 p.setDescription(rs.getString("description"));
                 p.setId_usercreate(rs.getInt("id_usercreate"));
-
+                p.setPoster(rs.getString("poster"));
                 String sql_getSong = "select s.id_song,s.name from playlist_work_song pa full outer join song s\n"
                         + "on pa.id_song = s.id_song\n"
                         + "where pa.id_playlist = ?";
@@ -98,17 +98,19 @@ public class PlaylistSongDBContext extends DBContext {
             String sql = "INSERT INTO [playlist]\n"
                     + "           ([name_playlist]\n"
                     + "           ,[description]\n"
-                    + "           ,[id_usercreate])\n"
+                    + "           ,[id_usercreate]\n"
+                    + "           ,[poster])\n"
                     + "     VALUES\n"
                     + "           (?\n"
+                    + "           ,?\n"
                     + "           ,?\n"
                     + "           ,?)";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, p.getName_playlist());
             stm.setString(2, p.getDescription());
             stm.setInt(3, p.getId_usercreate());
-            System.out.println(p.getId_usercreate());
-            System.out.println("da chay den 111");
+            stm.setString(4, p.getPoster());
+
             stm.executeUpdate();
 
             //QUERY to get playlist Id
@@ -189,14 +191,17 @@ public class PlaylistSongDBContext extends DBContext {
 
     public void updatePlaylistSong(Playlist p) {
         try {
-            String sql = "UPDATE [dbo].[playlist]\n"
+            String sql = "UPDATE [playlist]\n"
                     + "   SET [name_playlist] = ?\n"
                     + "      ,[description] = ?\n"
+                    + "      ,[poster] = ?\n"
                     + " WHERE id_playlist = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, p.getName_playlist());
             stm.setString(2, p.getDescription());
-            stm.setInt(3, p.getId_playlist());
+            stm.setString(3, p.getPoster());
+
+            stm.setInt(4, p.getId_playlist());
             stm.executeUpdate();
 
             //remove all song
@@ -205,7 +210,7 @@ public class PlaylistSongDBContext extends DBContext {
             PreparedStatement stm_remove_song = connection.prepareStatement(sql_remove_song);
             stm_remove_song.setInt(1, p.getId_playlist());
             stm_remove_song.executeUpdate();
-            
+
             //insert song for playlist
             for (Song so : p.getSongs()) {
                 String sql_insert_song = "INSERT INTO [playlist_work_song]\n"

@@ -10,7 +10,22 @@
         <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/admin/images/mi.png">
         <!-- Custom Stylesheet -->
         <link href="${pageContext.request.contextPath}/admin/css/style.css" rel="stylesheet">
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
 
+                    reader.onload = function (e) {
+                        $('#blah')
+                                .attr('src', e.target.result)
+                                .width(150)
+                                .height(200);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
     </head>
     <body>
 
@@ -124,41 +139,41 @@
                             </a>
                             <ul aria-expanded="false">
                                 <li><a href="${pageContext.request.contextPath}/music/singer/list">Danh sách ca sĩ</a></li>
-                             <li><a href="${pageContext.request.contextPath}/music/singer/insert">Thêm mới</a></li> 
-                             <li><a href="${pageContext.request.contextPath}/music/singer/update">Cập nhật</a></li>
+                                <li><a href="${pageContext.request.contextPath}/music/singer/insert">Thêm mới</a></li> 
+                                <li><a href="${pageContext.request.contextPath}/music/singer/update">Cập nhật</a></li>
                             </ul>
                         </li>
                         <li class="nav-label">ALBUM</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Album</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="${pageContext.request.contextPath}/music/songwithalbum/list">Danh sách Album</a></li>
-                             <li><a href="${pageContext.request.contextPath}/music/songwithalbum/insert">Thêm mới</a></li> 
-                             <li><a href="${pageContext.request.contextPath}/music/songwithalbum/update">Cập nhật</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">User</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">User</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="${pageContext.request.contextPath}/music/user/list">Danh sách User</a></li>
-                             <li><a href="${pageContext.request.contextPath}/music/user/insert">Thêm mới</a></li> 
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Playlist</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="${pageContext.request.contextPath}/music/playlist/list">Danh sách Playlist</a></li>
-                             <li><a href="${pageContext.request.contextPath}/music/playlist/insert">Thêm mới</a></li> 
-                             <li><a href="${pageContext.request.contextPath}/music/playlist/update">Cập nhật</a></li>
-                        </ul>
-                    </li>
+                        <li>
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                <i class="icon-notebook menu-icon"></i><span class="nav-text">Album</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="${pageContext.request.contextPath}/music/songwithalbum/list">Danh sách Album</a></li>
+                                <li><a href="${pageContext.request.contextPath}/music/songwithalbum/insert">Thêm mới</a></li> 
+                                <li><a href="${pageContext.request.contextPath}/music/songwithalbum/update">Cập nhật</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-label">User</li>
+                        <li>
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                <i class="icon-notebook menu-icon"></i><span class="nav-text">User</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="${pageContext.request.contextPath}/music/user/list">Danh sách User</a></li>
+                                <li><a href="${pageContext.request.contextPath}/music/user/insert">Thêm mới</a></li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                <i class="icon-notebook menu-icon"></i><span class="nav-text">Playlist</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="${pageContext.request.contextPath}/music/playlist/list">Danh sách Playlist</a></li>
+                                <li><a href="${pageContext.request.contextPath}/music/playlist/insert">Thêm mới</a></li> 
+                                <li><a href="${pageContext.request.contextPath}/music/playlist/update">Cập nhật</a></li>
+                            </ul>
+                        </li>
 
 
                 </div>
@@ -197,6 +212,14 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="val-username">Poster <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-lg-6">
+                                                    <input type="file" class="form-control" id="val-username" name="poster" onchange="readURL(this);" value="${requestScope.songs.poster}">
+                                                    <img id="blah" src="#" alt="your image" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
@@ -210,19 +233,19 @@
                                                     <input type="text" class="form-control" id="val-username" name="description" value="${requestScope.playListSong.description}">
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val-skill">Song <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
                                                     <c:forEach items="${requestScope.allsongs}" var="s">
-                                                    <input type="checkbox" 
-                                                           <c:forEach items="${requestScope.playListSong.songs}" var="ch">
+                                                        <input type="checkbox" 
+                                                               <c:forEach items="${requestScope.playListSong.songs}" var="ch">
                                                                    <c:if test="${ch.id_song eq s.id_song}">
-                                                           checked="checked"
-                                                           </c:if>
-                                                                </c:forEach>
-                                                                name="id_song" value="${s.id_song}" /> ${s.name}
+                                                                       checked="checked"
+                                                                   </c:if>
+                                                               </c:forEach>
+                                                               name="id_song" value="${s.id_song}" /> ${s.name}
                                                     </c:forEach>
                                                 </div>
                                             </div>
@@ -267,6 +290,8 @@
         ***********************************-->
         <script src="${pageContext.request.contextPath}/admin/plugins/common/common.min.js"></script>
         <!--image code show-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
         <!------>
         <script src="${pageContext.request.contextPath}/admin/js/custom.min.js"></script>
         <script src="${pageContext.request.contextPath}/admin/js/settings.js"></script>

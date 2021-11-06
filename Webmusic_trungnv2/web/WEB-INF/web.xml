@@ -124,6 +124,10 @@
         <servlet-name>AlbumHomeController</servlet-name>
         <servlet-class>homecontroller.AlbumHomeController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PlaylistHomeController</servlet-name>
+        <servlet-class>homecontroller.PlaylistHomeController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListSongController</servlet-name>
         <url-pattern>/music/song/list</url-pattern>
@@ -247,6 +251,10 @@
     <servlet-mapping>
         <servlet-name>AlbumHomeController</servlet-name>
         <url-pattern>/album/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PlaylistHomeController</servlet-name>
+        <url-pattern>/playlist/list</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -16,15 +16,18 @@ public class Playlist {
     private String name_playlist;
     private String description;
     private int id_usercreate;
+    private String poster;
     ArrayList<Song> songs = new ArrayList<>();
+
     public Playlist() {
     }
 
-    public Playlist(int id_playlist, String name_playlist, String description, int id_usercreate) {
+    public Playlist(int id_playlist, String name_playlist, String description, int id_usercreate, String poster) {
         this.id_playlist = id_playlist;
         this.name_playlist = name_playlist;
         this.description = description;
         this.id_usercreate = id_usercreate;
+        this.poster = poster;
     }
 
     public int getId_playlist() {
@@ -59,6 +62,14 @@ public class Playlist {
         this.id_usercreate = id_usercreate;
     }
 
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
     public ArrayList<Song> getSongs() {
         return songs;
     }
@@ -66,5 +77,7 @@ public class Playlist {
     public void setSongs(ArrayList<Song> songs) {
         this.songs = songs;
     }
+    
+    
     
 }
