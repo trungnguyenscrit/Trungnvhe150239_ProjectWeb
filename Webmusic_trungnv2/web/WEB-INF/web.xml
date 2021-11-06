@@ -116,6 +116,10 @@
         <servlet-name>SingerHomeContrller</servlet-name>
         <servlet-class>homecontroller.SingerHomeContrller</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GenreHomeController</servlet-name>
+        <servlet-class>homecontroller.GenreHomeController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListSongController</servlet-name>
         <url-pattern>/music/song/list</url-pattern>
@@ -231,6 +235,10 @@
     <servlet-mapping>
         <servlet-name>SingerHomeContrller</servlet-name>
         <url-pattern>/singer/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GenreHomeController</servlet-name>
+        <url-pattern>/genre/list</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -178,10 +178,10 @@
                                         <tbody>
                                             <c:forEach items="${requestScope.singers}" var="si">
                                             <tr>
-                                               <!-- Nhập thông tin hóa đơn -->
                                                <th>${si.id_singer}</th>
                                                 <th>${si.name}</th>
-                                                <th>${si.poster}</th>
+                                                <th><img style="width: 80px;height: 80px;  " 
+                                                                 src="${pageContext.request.contextPath}/${si.poster}" alt=""></th>
                                                 <th>${si.description}</th>
                                                 <th>
                                                     <input type="button" onclick="doUpdate('${si.id_singer}');" value="Update"/>

@@ -169,6 +169,7 @@
                                             <tr>
                                                 <th>id_genre</th>
                                                 <th>name_genre</th>
+                                                <th>Poster</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -179,6 +180,8 @@
                                                <!-- Nhập thông tin hóa đơn -->
                                                <th>${g.id_genre}</th>
                                                 <th>${g.name_genre}</th>
+                                                <th><img style="width: 100px;height: 100px;  " 
+                                                                 src="${pageContext.request.contextPath}/image/postergenre/${g.poster}" alt=""></th>
                                                 <th>
                                                     <input type="button" onclick="doUpdate('${g.id_genre}');" value="Update"/>
                                                 </th>

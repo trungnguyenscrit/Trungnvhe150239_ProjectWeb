@@ -62,6 +62,7 @@ public class InsertGenreController extends HttpServlet {
         Genre g = new Genre();
         g.setId_genre(request.getParameter("id_genre"));
         g.setName_genre(request.getParameter("name_genre"));
+        g.setPoster(request.getParameter("poster"));
         GenreDBContext db = new GenreDBContext();
         db.insert(g);
         response.sendRedirect("list");

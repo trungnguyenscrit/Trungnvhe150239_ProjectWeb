@@ -13,14 +13,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Genre;
 
-
-
 /**
  *
  * @author Trung
  */
-public class GenreDBContext extends DBContext{
-    
+public class GenreDBContext extends DBContext {
+
     public int getCountGenre() {
         int count = 0;
         try {
@@ -30,57 +28,62 @@ public class GenreDBContext extends DBContext{
             if (rs.next()) {
                 count = rs.getInt("result");
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(GenreDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return count;
     }
-    
-    public ArrayList<Genre> getGenres(){
+
+    public ArrayList<Genre> getGenres() {
         ArrayList<Genre> genres = new ArrayList<>();
         try {
             String sql = "select * from genre";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
-            while (rs.next()) {                
+            while (rs.next()) {
                 Genre g = new Genre();
                 g.setId_genre(rs.getString("id_genre"));
                 g.setName_genre(rs.getString("name_genre"));
+                g.setPoster(rs.getString("poster"));
                 genres.add(g);
             }
         } catch (SQLException ex) {
             Logger.getLogger(GenreDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return  genres;
+        return genres;
     }
-    public void insert(Genre g){
-        
+
+    public void insert(Genre g) {
+
         try {
-            String sql = "INSERT INTO [genre]\n" +
-                        "           ([id_genre]\n" +
-                        "           ,[name_genre])\n" +
-                        "     VALUES\n" +
-                        "           (?\n" +
-                        "           ,?)" ;
+            String sql = "INSERT INTO [genre]\n"
+                    + "           ([id_genre]\n"
+                    + "           ,[name_genre],[poster])\n"
+                    + "     VALUES\n"
+                    + "           (?\n"
+                    + "           ,?,?)";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, g.getId_genre());
             stm.setString(2, g.getName_genre());
+            stm.setString(3, g.getPoster());
             stm.executeUpdate();
-                    } catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(GenreDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public Genre getGenre(String id_genre) {
         try {
             String sql = "select * from genre WHERE id_genre like ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, id_genre);
             ResultSet rs = stm.executeQuery();
-            while (rs.next()) {                
+            while (rs.next()) {
                 Genre g = new Genre();
                 g.setId_genre(rs.getString("id_genre"));
                 g.setName_genre(rs.getString("name_genre"));
+                g.setPoster(rs.getString("poster"));
                 return g;
             }
         } catch (SQLException ex) {
@@ -88,26 +91,30 @@ public class GenreDBContext extends DBContext{
         }
         return null;
     }
+
     public void delete(String id_genre) {
         try {
-           String sql_del_genre = "DELETE FROM [dbo].[genre]\n" +
-                                "      WHERE id_genre like ?";
+            String sql_del_genre = "DELETE FROM [dbo].[genre]\n"
+                    + "      WHERE id_genre like ?";
             PreparedStatement stm_del_genre = connection.prepareStatement(sql_del_genre);
             stm_del_genre.setString(1, id_genre);
             stm_del_genre.executeUpdate();
-            
-       } catch (SQLException ex) {
+
+        } catch (SQLException ex) {
             Logger.getLogger(GenreDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-   }
+    }
+
     public void update(Genre g) {
         try {
-            String sql = "UPDATE [dbo].[genre]\n" +
-                        "   SET [name_genre] = ?\n" +
-                        " WHERE id_genre like ?";
+            String sql = "UPDATE [genre]\n"
+                    + "   SET [name_genre] = ?\n"
+                    + "      ,[poster] = ?"
+                    + " WHERE id_genre like ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, g.getName_genre());
-            stm.setString(2, g.getId_genre());
+            stm.setString(2, g.getPoster());
+            stm.setString(3, g.getId_genre());
             stm.executeUpdate();
 
         } catch (SQLException ex) {

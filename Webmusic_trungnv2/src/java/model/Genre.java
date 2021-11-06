@@ -10,15 +10,18 @@ package model;
  * @author Trung
  */
 public class Genre {
+
     private String id_genre;
     private String name_genre;
+    private String poster;
 
     public Genre() {
     }
 
-    public Genre(String id_genre, String name_genre) {
+    public Genre(String id_genre, String name_genre, String poster) {
         this.id_genre = id_genre;
         this.name_genre = name_genre;
+        this.poster = poster;
     }
 
     public String getId_genre() {
@@ -36,5 +39,15 @@ public class Genre {
     public void setName_genre(String name_genre) {
         this.name_genre = name_genre;
     }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
     
+
 }
