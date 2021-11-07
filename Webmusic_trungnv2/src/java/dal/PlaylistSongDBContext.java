@@ -20,14 +20,32 @@ import model.Song;
  */
 public class PlaylistSongDBContext extends DBContext {
 
+    public ArrayList<Song> getAllPlaylistSongSingle(String id) {
+        ArrayList<Song> playlistsong = new ArrayList<>();
+        try {
+            String sql = "select s.* from playlist p join playlist_work_song ps\n"
+                    + "on p.id_playlist = ps.id_playlist join song s \n"
+                    + "on ps.id_song = s.id_song\n"
+                    + "where p.id_playlist = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Song s = new Song(rs.getString("id_song"), rs.getString("name"), rs.getString("poster"), rs.getString("linksong"), rs.getString("description"));
+                playlistsong.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PlaylistSongDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return playlistsong;
+    }
+
     public ArrayList<Playlist> getPlaylistSong() {
         ArrayList<Playlist> playlistsong = new ArrayList<>();
         try {
-            String sql = "SELECT [id_playlist]\n"
-                    + "      ,[name_playlist]\n"
-                    + "      ,[description]\n"
-                    + "      ,[id_usercreate],[poster]\n"
-                    + "  FROM [playlist]";
+            String sql = "select p.* from playlist p join [User] u\n"
+                    + "on p.id_usercreate = u.user_id\n"
+                    + "where u.role like 'True'";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {

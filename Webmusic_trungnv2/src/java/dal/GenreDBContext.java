@@ -12,12 +12,33 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Genre;
+import model.Song;
 
 /**
  *
  * @author Trung
  */
 public class GenreDBContext extends DBContext {
+
+    public ArrayList<Song> getAllGenreSong(String id) {
+        ArrayList<Song> playlistsong = new ArrayList<>();
+        try {
+            String sql = "select s.* from genre p join genre_work_song ps\n"
+                    + "on p.id_genre = ps.id_genre join song s \n"
+                    + "on ps.id_song = s.id_song\n"
+                    + "where p.id_genre = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Song s = new Song(rs.getString("id_song"), rs.getString("name"), rs.getString("poster"), rs.getString("linksong"), rs.getString("description"));
+                playlistsong.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PlaylistSongDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return playlistsong;
+    }
 
     public int getCountGenre() {
         int count = 0;

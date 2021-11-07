@@ -168,7 +168,7 @@
                                     <h1>All Song in Playlist ${idp}</h1>
                                 </div>
                             </div>
-                            <c:forEach items="${requestScope.allAlbumSong}" var="s">
+                            <c:forEach items="${requestScope.allPlaylistSongSingle}" var="s">
                                 <div class="col-lg-12 col-md-12 padding_right40">
                                     <div class="ms_weekly_box">
                                         <div class="weekly_left">

@@ -20,6 +20,26 @@ import model.Song;
  */
 public class AlbumDBContext extends DBContext {
 
+    public ArrayList<Song> getAllAlbumSong(String id) {
+        ArrayList<Song> playlistsong = new ArrayList<>();
+        try {
+            String sql = "select s.* from album p join song_album ps\n"
+                    + "on p.id_album = ps.id_album join song s \n"
+                    + "on ps.id_song = s.id_song\n"
+                    + "where p.id_album = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Song s = new Song(rs.getString("id_song"), rs.getString("name"), rs.getString("poster"), rs.getString("linksong"), rs.getString("description"));
+                playlistsong.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AlbumDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return playlistsong;
+    }
+
     public int getCountAlbum() {
         int count = 0;
         try {
