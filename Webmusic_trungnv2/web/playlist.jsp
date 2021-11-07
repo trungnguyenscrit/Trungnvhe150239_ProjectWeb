@@ -116,36 +116,9 @@
 
                         </ul>
 
-                        <ul class="nav_downloads">
-                            <li><a href="download.html" title="Downloads">
-                                    <span class="nav_icon">
-                                        <span class="icon icon_download"></span>
-                                    </span>
-                                    <span class="nav_text">
-                                        downloads
-                                    </span>
-                                </a>
-                            </li>
-                            <li><a href="favourite.html" title="Favourites">
-                                    <span class="nav_icon">
-                                        <span class="icon icon_favourite"></span>
-                                    </span>
-                                    <span class="nav_text">
-                                        favourites
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
+                         
                         <ul class="nav_playlist">
-                            <li><a href="feature_playlist.html" title="Featured Playlist">
-                                    <span class="nav_icon">
-                                        <span class="icon icon_fe_playlist"></span>
-                                    </span>
-                                    <span class="nav_text">
-                                        featured playlist
-                                    </span>
-                                </a>
-                            </li>
+                             
                             <li><a href="${pageContext.request.contextPath}/myplaylist" title="Create Playlist">
                                     <span class="nav_icon">
                                         <span class="icon icon_c_playlist"></span>
