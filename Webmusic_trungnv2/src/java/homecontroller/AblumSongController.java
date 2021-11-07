@@ -9,6 +9,7 @@ import dal.AlbumDBContext;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,19 +27,32 @@ public class AblumSongController extends HttpServlet {
      *
      * @param request servlet request
      * @param response servlet response
-     * 
+     *
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         String id = request.getParameter("ID");
         request.setAttribute("idp", id);
-        AlbumDBContext db = new AlbumDBContext();
-        ArrayList<Song> allAlbumSong = db.getAllAlbumSong(id);
-        request.setAttribute("allAlbumSong", allAlbumSong);
-        request.getRequestDispatcher("../album_single.jsp").forward(request, response);
+        String action = request.getParameter("action");
+        if (action == null) {
+            String play = request.getParameter("play");
+            if (play != null) {
+                Cookie musicplay = new Cookie("musicplay", play);
+                musicplay.setMaxAge(60 * 60 * 24 * 3);
+                response.addCookie(musicplay);
+            }
+            AlbumDBContext db = new AlbumDBContext();
+            ArrayList<Song> allAlbumSong = db.getAllAlbumSong(id);
+            request.setAttribute("allAlbumSong", allAlbumSong);
+            request.getRequestDispatcher("../album_single.jsp").forward(request, response);
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

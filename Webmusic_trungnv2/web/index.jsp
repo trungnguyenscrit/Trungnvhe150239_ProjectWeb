@@ -13,7 +13,7 @@
     <!-- Begin Head -->
 
     <head>
-        <title>Miraculous - Online Music Store Html Template</title>
+        <title>Milano</title>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta name="description" content="Music">
@@ -106,20 +106,7 @@
                             </li>
 
                         </ul>
-
-                        
-                        <ul class="nav_playlist">
-                            
-                            <li><a href="${pageContext.request.contextPath}/myplaylist" title="Create Playlist">
-                                    <span class="nav_icon">
-                                        <span class="icon icon_c_playlist"></span>
-                                    </span>
-                                    <span class="nav_text">
-                                        create playlist
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
+                         
                     </div>
                 </div>
             </div>
@@ -127,14 +114,7 @@
             <div class="ms_content_wrapper padder_top80">
                 <!---Header--->
                 <div class="ms_header">
-                    <div class="ms_top_left">
-                        <div class="ms_top_search">
-                            <input type="text" class="form-control" placeholder="Search Music Here..">
-                            <span class="search_icon">
-                                <img src="images/svg/search.svg" alt="">
-                            </span>
-                        </div>
-                    </div>
+                    
                     <div class="ms_top_right">
                         <div class="ms_top_lang">
                             <c:if test="${sessionScope.user!=null}">
@@ -193,13 +173,7 @@
                                         </div>
                                         <div class="weekly_right">
                                             <span class="w_song_time">5:10</span>
-                                            <span class="ms_more_icon" data-other="1">
-                                                <img src="images/svg/more.svg" alt="">									
-                                            </span>
                                         </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </c:forEach>
@@ -220,8 +194,8 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-6">
                                 <div class="footer_box">
-                                    <h1 class="footer_title">miraculous music stations</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+                                    <h1 class="footer_title">Milano music stations</h1>
+                                    <p>Milano Music là web nhạc do Trung Nguyễn tạo trên nền nhạc mp3 miễn phí của Youtube, chúng tôi tạo ra nhằm mục đính gửi gắm đến các bạn những bài nhạc hay để giúp bạn cảm thấy thoải mái sau khi làm việc</p>
                                 </div>
                             </div>
 
@@ -238,7 +212,7 @@
                                             </div>
                                             <div class="foo_con_data">
                                                 <span class="con-title">Call us :</span>
-                                                <span>(+1) 202-555-0176, (+1) 2025-5501</span>
+                                                <span>0986054843</span>
                                             </div>
                                         </li>
                                         <li>
@@ -247,7 +221,7 @@
                                             </div>
                                             <div class="foo_con_data">
                                                 <span class="con-title">email us :</span>
-                                                <span><a href="#">demo@mail.com </a>, <a href="#">dummy@mail.com</a></span>
+                                                <span><a href="#">trungpiano2507@gmail.com</a>, <a href="#">trungnguyenscrit@gmail.com</a></span>
                                             </div>
                                         </li>
                                         <li>
@@ -256,17 +230,15 @@
                                             </div>
                                             <div class="foo_con_data">
                                                 <span class="con-title">walk in :</span>
-                                                <span>598 Old House Drive, London</span>
+                                                <span>Hòa Lạc, Thạch Thất, Hà Nội</span>
                                             </div>
                                         </li>
                                     </ul>
                                     <div class="foo_sharing">
                                         <div class="share_title">follow us :</div>
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.facebook.com/profile.php?id=100013239997750"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://twitter.com/Trungpaofast"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -299,42 +271,7 @@
                     </audio>  
             </div>
         </div>
-        <!----Queue Save Modal---->
-        <div class="ms_save_modal">
-            <div id="save_modal" class="modal  centered-modal" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <i class="fa_icon form_close"></i>
-                        </button>
-                        <div class="modal-body">
-                            <h1>Log in to start sharing your music!</h1>
-                            <div class="save_modal_btn">
-                                <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> continue with google </a>
-                                <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> continue with facebook</a>
-                            </div>
-                            <div class="ms_save_email">
-                                <h3>or use your email</h3>
-                                <div class="save_input_group">
-                                    <input type="text" placeholder="Enter Your Name" class="form-control">
-                                </div>
-                                <div class="save_input_group">
-                                    <input type="password" placeholder="Enter Password" class="form-control">
-                                </div>
-                                <button class="save_btn">Log in</button>
-                            </div>
-                            <div class="ms_dnt_have">
-                                <span>Dont't have an account ?</span>
-                                <a href="javascript:;" class="hideCurrentModel" data-toggle="modal" data-target="#myModal">Register Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-
-        </div>	
         <!--Main js file Style-->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>

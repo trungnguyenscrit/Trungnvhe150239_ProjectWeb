@@ -115,20 +115,7 @@
                             </li>
 
                         </ul>
-
-                         
-                        <ul class="nav_playlist">
-                             
-                            <li><a href="${pageContext.request.contextPath}/myplaylist" title="Create Playlist">
-                                    <span class="nav_icon">
-                                        <span class="icon icon_c_playlist"></span>
-                                    </span>
-                                    <span class="nav_text">
-                                        create playlist
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
+ 
                     </div>
                 </div>
             </div>
@@ -136,14 +123,7 @@
             <div class="ms_content_wrapper">
                 <!---Header--->
                 <div class="ms_header">
-                    <div class="ms_top_left">
-                        <div class="ms_top_search">
-                            <input type="text" class="form-control" placeholder="Search Music Here..">
-                            <span class="search_icon">
-                                <img src="images/svg/search.svg" alt="">
-                            </span>
-                        </div>
-                    </div>
+                     
                     <div class="ms_top_right">
                         <div class="ms_top_lang">
                             <c:if test="${sessionScope.user!=null}">
@@ -160,7 +140,7 @@
                             </c:if>--->
                             ${fn}
                             <c:if test="${fn:toUpperCase(sessionScope.user.role) == 'TRUE'}">
-                                <a href="admin" class="ms_btn login_btn" ><span>Manager</span></a>
+                                <a href="${pageContext.request.contextPath}/admin" class="ms_btn login_btn" ><span>Manager</span></a>
                             </c:if>
 
                         </div>
@@ -214,63 +194,89 @@
                     </div>
                     <div class="ms_footer_wrapper">
 
-                        <div class="ms_footer_inner">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="footer_box">
-                                        <h1 class="footer_title">miraculous music stations</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-                                    </div>
-                                </div>
+            <div class="ms_footer_wrapper">
+                <div class="ms_footer_logo">
+                </div>
+            <div class="ms_footer_wrapper">
+                <div class="ms_footer_logo">
+                </div>
+                <div class="ms_footer_wrapper">
 
-                                <div class="col-lg-3 col-md-6">
-
+                    <div class="ms_footer_inner">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="footer_box">
+                                    <h1 class="footer_title">Milano music stations</h1>
+                                    <p>Milano Music là web nhạc do Trung Nguyễn tạo trên nền nhạc mp3 miễn phí của Youtube, chúng tôi tạo ra nhằm mục đính gửi gắm đến các bạn những bài nhạc hay để giúp bạn cảm thấy thoải mái sau khi làm việc</p>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="footer_box footer_contacts">
-                                        <h1 class="footer_title">contact us</h1>
-                                        <ul class="foo_con_info">
-                                            <li>
-                                                <div class="foo_con_icon">
-                                                    <img src="${pageContext.request.contextPath}/images/svg/phone.svg" alt="">
-                                                </div>
-                                                <div class="foo_con_data">
-                                                    <span class="con-title">Call us :</span>
-                                                    <span>(+1) 202-555-0176, (+1) 2025-5501</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="foo_con_icon">
-                                                    <img src="${pageContext.request.contextPath}/images/svg/message.svg" alt="">
-                                                </div>
-                                                <div class="foo_con_data">
-                                                    <span class="con-title">email us :</span>
-                                                    <span><a href="#">demo@mail.com </a>, <a href="#">dummy@mail.com</a></span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="foo_con_icon">
-                                                    <img src="${pageContext.request.contextPath}/images/svg/add.svg" alt="">
-                                                </div>
-                                                <div class="foo_con_data">
-                                                    <span class="con-title">walk in :</span>
-                                                    <span>598 Old House Drive, London</span>
-                                                </div>
-                                            </li>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="footer_box footer_contacts">
+                                    <h1 class="footer_title">contact us</h1>
+                                    <ul class="foo_con_info">
+                                        <li>
+                                            <div class="foo_con_icon">
+                                                <img src="${pageContext.request.contextPath}/images/svg/phone.svg" alt="">
+                                            </div>
+                                            <div class="foo_con_data">
+                                                <span class="con-title">Call us :</span>
+                                                <span>0986054843</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="foo_con_icon">
+                                                <img src="${pageContext.request.contextPath}/images/svg/message.svg" alt="">
+                                            </div>
+                                            <div class="foo_con_data">
+                                                <span class="con-title">email us :</span>
+                                                <span><a href="#">trungpiano2507@gmail.com</a>, <a href="#">trungnguyenscrit@gmail.com</a></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="foo_con_icon">
+                                                <img src="${pageContext.request.contextPath}/images/svg/add.svg" alt="">
+                                            </div>
+                                            <div class="foo_con_data">
+                                                <span class="con-title">walk in :</span>
+                                                <span>Hòa Lạc, Thạch Thất, Hà Nội</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="foo_sharing">
+                                        <div class="share_title">follow us :</div>
+                                        <ul>
+                                            <li><a href="https://www.facebook.com/profile.php?id=100013239997750"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://twitter.com/Trungpaofast"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                         </ul>
-                                        <div class="foo_sharing">
-                                            <div class="share_title">follow us :</div>
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                </div>-->
+                <!----Audio Player Section---->
+                <div class="ms_player_wrapper">
+                    <div class="row"> 
+                        <audio class="my_audio" controls preload="none" style="width: 98%;">
+                            <source src="music/${cookie.musicplay.value}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+                <!----Audio Player Section---->
+                <div class="ms_player_wrapper">
+                    <div class="row"> 
+                        <audio class="my_audio" controls preload="none" style="width: 98%;">
+                            <source src="music/${cookie.musicplay.value}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
 
                     </div>-->
                     <!----Audio Player Section---->

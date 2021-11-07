@@ -7,9 +7,9 @@ package homecontroller;
 
 import dal.GenreDBContext;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,13 +32,25 @@ public class GenreHomeSongController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         String id = request.getParameter("ID");
         request.setAttribute("idp", id);
-        GenreDBContext db = new GenreDBContext();
+        String action = request.getParameter("action");
+        if (action == null) {
+            String play = request.getParameter("play");
+            if (play != null) {
+                Cookie musicplay = new Cookie("musicplay", play);
+                musicplay.setMaxAge(60 * 60 * 24 * 3);
+                response.addCookie(musicplay);
+            }
+            GenreDBContext db = new GenreDBContext();
         ArrayList<Song> allGenreSong = db.getAllGenreSong(id);
         request.setAttribute("allGenreSong", allGenreSong);
         request.getRequestDispatcher("../genres_single.jsp").forward(request, response);
+        }
         
         
     }

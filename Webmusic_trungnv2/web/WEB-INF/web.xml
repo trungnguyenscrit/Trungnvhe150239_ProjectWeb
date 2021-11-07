@@ -108,10 +108,7 @@
         <servlet-name>UpdatePlaylistSongController</servlet-name>
         <servlet-class>admincontroller.UpdatePlaylistSongController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>InsertPlaylistController</servlet-name>
-        <servlet-class>homecontroller.InsertPlaylistController</servlet-class>
-    </servlet>
+    
     <servlet>
         <servlet-name>SingerHomeContrller</servlet-name>
         <servlet-class>homecontroller.SingerHomeContrller</servlet-class>
@@ -248,10 +245,7 @@
         <servlet-name>UpdatePlaylistSongController</servlet-name>
         <url-pattern>/music/playlist/update</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>InsertPlaylistController</servlet-name>
-        <url-pattern>/myplaylist</url-pattern>
-    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>SingerHomeContrller</servlet-name>
         <url-pattern>/singer/list</url-pattern>

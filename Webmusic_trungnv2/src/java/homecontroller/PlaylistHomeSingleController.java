@@ -7,9 +7,9 @@ package homecontroller;
 
 import dal.PlaylistSongDBContext;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,13 +32,28 @@ public class PlaylistHomeSingleController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+         
+        
+        
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         String id = request.getParameter("ID");
         request.setAttribute("idp", id);
-        PlaylistSongDBContext db = new PlaylistSongDBContext();
+        String action = request.getParameter("action");
+        if (action == null) {
+            String play = request.getParameter("play");
+            if (play != null) {
+                Cookie musicplay = new Cookie("musicplay", play);
+                musicplay.setMaxAge(60 * 60 * 24 * 3);
+                response.addCookie(musicplay);
+            }
+            PlaylistSongDBContext db = new PlaylistSongDBContext();
         ArrayList<Song> allPlaylistSongSingle = db.getAllPlaylistSongSingle(id);
         request.setAttribute("allPlaylistSongSingle", allPlaylistSongSingle);
         request.getRequestDispatcher("../playlist_single.jsp").forward(request, response);
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

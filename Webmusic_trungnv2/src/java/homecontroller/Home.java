@@ -56,7 +56,6 @@ public class Home extends HttpServlet {
             request.setAttribute("songs", songs);
             request.getRequestDispatcher("index.jsp").forward(request, response);
             }
-
         } else {
             response.sendRedirect("user?action=login");
         }
