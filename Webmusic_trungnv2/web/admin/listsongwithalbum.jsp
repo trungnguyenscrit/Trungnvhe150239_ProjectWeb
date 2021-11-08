@@ -216,6 +216,7 @@
                                                 <th>Description</th>
                                                 <th>Song</th>
                                                 <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         
@@ -225,8 +226,7 @@
                                                <th>${sa.id_album}</th>
                                                <th><img style="width: 80px;height: 80px;  " 
                                                                  src="${pageContext.request.contextPath}/image/postersinger/${sa.poster}" alt=""></th>
-                                                <th>${si.description}</th>
-                                                <th>${sa.name}</th>
+                                               <th>${sa.name}</th>
                                                 <th>${sa.description}</th>
                                                 <th><c:forEach items="${sa.songs}" var="s">
                                                     ${s.name} <br/>

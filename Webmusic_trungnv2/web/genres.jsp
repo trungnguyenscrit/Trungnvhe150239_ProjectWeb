@@ -256,13 +256,7 @@
 
                 </div>-->
                 <!----Audio Player Section---->
-                <div class="ms_player_wrapper">
-                    <div class="row"> 
-                        <audio class="my_audio" controls preload="none" style="width: 98%;">
-                            <source src="music/${cookie.musicplay.value}" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
+ 
             </div>
                     <!----Audio Player Section---->
 
